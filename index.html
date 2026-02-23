@@ -14,7 +14,7 @@ body {
   background-color: #f8fafc;
 }
 
-/* ===== MUSIC BAR ===== */
+/* MUSIC BAR */
 .music-player {
   position: sticky;
   top: 0;
@@ -50,7 +50,7 @@ body {
   100% { height: 6px; }
 }
 
-/* ===== TIMELINE ===== */
+/* TIMELINE */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -59,12 +59,6 @@ body {
   background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
   top: 0;
   bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 20px;
-  }
 }
 
 .timeline-dot {
@@ -79,20 +73,18 @@ body {
 }
 
 @media (max-width: 768px) {
-  .timeline-dot {
-    left: 20px;
-  }
+  .timeline-line { left: 20px; }
+  .timeline-dot { left: 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 MUSIC BAR WITH LOGO -->
+<!-- MUSIC BAR WITH LOGO -->
 <div class="music-player">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
-    <!-- LOGO -->
     <div class="flex items-center gap-3">
       <img
         src="https://i.pinimg.com/originals/ea/1d/22/ea1d220a280be38853d3b8d056d7b89d.png"
@@ -134,99 +126,112 @@ body {
 <main class="max-w-6xl mx-auto px-4 py-16 relative">
 <div class="timeline-line hidden md:block"></div>
 
-<!-- ===== TIMELINE 1 ===== -->
+<!-- TIMELINE 1 -->
 <section class="relative mb-24">
-  <div class="timeline-dot hidden md:block"></div>
-
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
-    <div class="space-y-4 md:pr-8">
-      <img src="ay-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="ay-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="ay-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-    </div>
-
-    <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
-      <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
-        📅 24.01.2026
-      </span>
-      <h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
-        Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali
-      </h2>
-      <p class="text-slate-600">
-        Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
-        Adventurer dan Pathfinder bagi perancangan dan pengukuhan rohani.
-      </p>
-    </div>
-  </div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:grid md:grid-cols-2 md:gap-12 items-start">
+<div class="space-y-4 md:pr-8">
+<img src="ay-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="ay-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="ay-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
+<span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">📅 24.01.2026</span>
+<h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
+Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali
+</h2>
+<p class="text-slate-600">
+Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
+Adventurer dan Pathfinder bagi perancangan dan pengukuhan rohani.
+</p>
+</div>
+</div>
 </section>
 
-<!-- ===== TIMELINE 2 ===== -->
+<!-- TIMELINE 2 -->
 <section class="relative mb-24">
-  <div class="timeline-dot hidden md:block"></div>
-
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
-    <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
-      <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
-        📅 07.02.2026
-      </span>
-      <h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
-        Induction Night – Adventurer, Pathfinder, MIT & MG
-      </h2>
-      <p class="text-slate-600">
-        Penyertaan Gereja SDA Koporingan dalam gabungan Daerah Tamparuli
-        bertempat di Gereja SDA Pangasaan Tamparuli bagi majlis malam induksi.
-      </p>
-    </div>
-
-    <div class="space-y-4 md:pl-8 order-1 md:order-2">
-      <img src="induction-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="induction-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="induction-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="induction-4.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-    </div>
-  </div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:grid md:grid-cols-2 md:gap-12 items-start">
+<div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
+<span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">📅 07.02.2026</span>
+<h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
+Induction Night – Adventurer, Pathfinder, MIT & MG
+</h2>
+<p class="text-slate-600">
+Penyertaan Gereja SDA Koporingan dalam gabungan Daerah Tamparuli
+bertempat di Gereja SDA Pangasaan Tamparuli bagi majlis malam induksi.
+</p>
+</div>
+<div class="space-y-4 md:pl-8 order-1 md:order-2">
+<img src="induction-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="induction-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="induction-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="induction-4.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+</div>
+</div>
 </section>
 
-<!-- ===== TIMELINE 3 ===== -->
+<!-- TIMELINE 3 -->
 <section class="relative mb-24">
-  <div class="timeline-dot hidden md:block"></div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:grid md:grid-cols-2 md:gap-12 items-start">
+<div class="space-y-4 md:pr-8">
+<img src="MIT-1.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="MIT-2.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="MIT-3.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+<img src="MIT-4.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
+<span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">📅 08.02.2026</span>
+<h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
+Orientasi Kurikulum Master Guide in Training – Daerah Kapa
+</h2>
+<p class="text-slate-600">
+Sesi orientasi bagi memperkukuhkan pemahaman kurikulum Master Guide
+in Training serta persediaan kepimpinan dalam pelayanan belia.
+</p>
+</div>
+</div>
+</section>
 
-  <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
-    <div class="space-y-4 md:pr-8">
-      <img src="MIT-1.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="MIT-2.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="MIT-3.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-      <img src="MIT-4.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
-    </div>
-
-    <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
-      <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
-        📅 08.02.2026
-      </span>
-      <h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
-        Orientasi Kurikulum Master Guide in Training – Daerah Kapa
-      </h2>
-      <p class="text-slate-600">
-        Sesi orientasi bagi memperkukuhkan pemahaman kurikulum Master Guide
-        in Training serta persediaan kepimpinan dalam pelayanan belia.
-      </p>
-    </div>
-  </div>
+<!-- TIMELINE 4 (ICON STYLE) -->
+<section class="relative mb-24">
+<div class="timeline-dot hidden md:block"></div>
+<div class="flex justify-center">
+<div class="bg-white p-10 rounded-2xl shadow-md max-w-xl text-center">
+<div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-3xl">
+📘
+</div>
+<span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
+📅 15.02.2026
+</span>
+<h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
+Meeting Pertama Jabatan Belia Daerah Kapa
+</h2>
+<p class="text-slate-600 leading-relaxed">
+Perjumpaan pertama bagi tahun 2026 di peringkat daerah yang melibatkan
+kepimpinan Jabatan Belia untuk membincangkan perancangan, hala tuju
+serta pengukuhan pelayanan belia Daerah Kapa.
+</p>
+<div class="mt-6 text-sm text-slate-500 italic">
+🧭 Menetapkan arah pelayanan belia tahun 2026
+</div>
+</div>
+</div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="bg-white border-t">
-  <div class="max-w-6xl mx-auto px-4 py-8 text-center space-y-4">
-    <div class="h-1 w-16 bg-blue-700 mx-auto rounded-full"></div>
-    <p class="italic text-lg text-slate-600">
-      "Grounded in the BIBLE and focused on the Mission"
-    </p>
-    <p class="text-slate-400 text-sm">
-      Jabatan Belia Gereja SDA Koporingan © 2026
-    </p>
-  </div>
+<div class="max-w-6xl mx-auto px-4 py-8 text-center space-y-4">
+<div class="h-1 w-16 bg-blue-700 mx-auto rounded-full"></div>
+<p class="italic text-lg text-slate-600">
+"Grounded in the BIBLE and focused on the Mission"
+</p>
+<p class="text-slate-400 text-sm">
+Jabatan Belia Gereja SDA Koporingan © 2026
+</p>
+</div>
 </footer>
 
 <script>

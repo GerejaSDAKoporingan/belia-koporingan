@@ -83,17 +83,6 @@ body {
     left: 20px;
   }
 }
-
-.image-placeholder {
-  background: #e2e8f0;
-  aspect-ratio: 4 / 3;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  font-weight: 500;
-}
 </style>
 </head>
 
@@ -137,76 +126,36 @@ body {
 <main class="max-w-6xl mx-auto px-4 py-16 relative">
 <div class="timeline-line hidden md:block"></div>
 
-<script>
-function timelineItem(date, title, desc, side) {
-  return `
-  <section class="relative mb-24">
-    <div class="timeline-dot hidden md:block"></div>
+<!-- ===== FIRST TIMELINE (IMAGES CONNECTED) ===== -->
+<section class="relative mb-24">
+  <div class="timeline-dot hidden md:block"></div>
 
-    <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
-      
-      ${side === "left" ? `
-      <div class="space-y-4 md:pr-8">
-        <div class="image-placeholder">Image 1</div>
-        <div class="image-placeholder">Image 2</div>
-        <div class="image-placeholder">Image 3</div>
-      </div>
-      <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
-      ` : `
-      <div class="hidden md:block"></div>
-      <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8">
-      `}
-      
-        <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
-          📅 ${date}
-        </span>
-        <h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">${title}</h2>
-        <p class="text-slate-600">${desc}</p>
-      </div>
-
-      ${side === "right" ? `
-      <div class="space-y-4 md:pl-8">
-        <div class="image-placeholder">Image 1</div>
-        <div class="image-placeholder">Image 2</div>
-        <div class="image-placeholder">Image 3</div>
-      </div>
-      ` : ``}
-
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
+    <!-- Images -->
+    <div class="space-y-4 md:pr-8">
+      <img src="images/ay-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+      <img src="images/ay-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+      <img src="images/ay-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
     </div>
-  </section>
-  `;
-}
-</script>
 
-<div id="timeline"></div>
+    <!-- Content -->
+    <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
+      <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
+        📅 24.01.2026
+      </span>
+      <h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
+        Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali
+      </h2>
+      <p class="text-slate-600">
+        Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
+        Adventurer dan Pathfinder bagi perancangan dan pengukuhan rohani.
+      </p>
+    </div>
+  </div>
+</section>
 
-<script>
-const data = [
-["24.01.2026","Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali",
-"Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth, Adventurer dan Pathfinder bagi perancangan dan pengukuhan rohani."],
-
-["07.02.2026","Induction Night – Adventurer, Pathfinder, MIT & MG",
-"Penyertaan Gereja SDA Koporingan dalam gabungan Daerah Tamparuli bagi majlis malam induksi dan ikrar pelayanan Tahun 2026."],
-
-["08.02.2026","Orientasi Kurikulum Master Guide in Training – Daerah Kapa",
-"Sesi orientasi bagi memperkukuhkan pemahaman kurikulum dan persediaan kepimpinan MIT."],
-
-["15.02.2026","Meeting Pertama Jabatan Belia Daerah Kapa",
-"Perjumpaan pertama jabatan belia peringkat daerah bagi perancangan dan hala tuju pelayanan belia tahun 2026."],
-
-["21.02.2026","Perjumpaan AY – Aktiviti Belia",
-"Aktiviti bersama para belia Gereja SDA Koporingan yang menekankan kesatuan dan pertumbuhan rohani."],
-
-["22.02.2026","Perjumpaan Adventurer & Pathfinder – Progressive Class",
-"Pengenalan lagu, ikrar dan progressive class dengan kehadiran 28 orang termasuk MIT dan MG sebagai mentor."]
-];
-
-const container = document.getElementById("timeline");
-data.forEach((item, index) => {
-  const side = index % 2 === 0 ? "left" : "right";
-  container.innerHTML += timelineItem(item[0], item[1], item[2], side);
-});
-</script>
+<!-- ===== OTHER TIMELINES (PLACEHOLDER FOR NOW) ===== -->
+<!-- We will connect images later -->
 
 </main>
 

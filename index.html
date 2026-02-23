@@ -14,7 +14,7 @@ body {
   background-color: #f8fafc;
 }
 
-/* ===== MUSIC PLAYER ===== */
+/* ===== MUSIC BAR ===== */
 .music-player {
   position: sticky;
   top: 0;
@@ -88,10 +88,18 @@ body {
 
 <body>
 
-<!-- 🎵 MUSIC PLAYER -->
+<!-- 🎵 MUSIC BAR WITH LOGO -->
 <div class="music-player">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-4">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-3">
+      <img
+        src="https://i.pinimg.com/originals/ea/1d/22/ea1d220a280be38853d3b8d056d7b89d.png"
+        alt="SDA Logo"
+        class="w-10 h-auto"
+      />
+
       <button id="musicBtn" onclick="toggleMusic()" class="bg-blue-700 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-800 transition">
         ▶ Play Hymn
       </button>
@@ -126,19 +134,17 @@ body {
 <main class="max-w-6xl mx-auto px-4 py-16 relative">
 <div class="timeline-line hidden md:block"></div>
 
-<!-- ===== FIRST TIMELINE ===== -->
+<!-- ===== TIMELINE 1 ===== -->
 <section class="relative mb-24">
   <div class="timeline-dot hidden md:block"></div>
 
   <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
-    <!-- Images -->
     <div class="space-y-4 md:pr-8">
       <img src="ay-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
       <img src="ay-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
       <img src="ay-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
     </div>
 
-    <!-- Content -->
     <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
       <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
         📅 24.01.2026
@@ -154,14 +160,11 @@ body {
   </div>
 </section>
 
-</main>
-<!-- ===== SECOND TIMELINE ===== -->
+<!-- ===== TIMELINE 2 ===== -->
 <section class="relative mb-24">
   <div class="timeline-dot hidden md:block"></div>
 
   <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
-    
-    <!-- Content (LEFT) -->
     <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
       <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
         📅 07.02.2026
@@ -172,21 +175,47 @@ body {
       <p class="text-slate-600">
         Penyertaan Gereja SDA Koporingan dalam gabungan Daerah Tamparuli
         bertempat di Gereja SDA Pangasaan Tamparuli bagi majlis malam induksi.
-        Para Adventurer, Pathfinder serta Master Guide in Training menyahut
-        panggilan pelayanan dan ikrar bagi Tahun 2026.
       </p>
     </div>
 
-    <!-- Images (RIGHT) -->
     <div class="space-y-4 md:pl-8 order-1 md:order-2">
       <img src="induction-1.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
       <img src="induction-2.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
       <img src="induction-3.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
       <img src="induction-4.jpeg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
     </div>
-
   </div>
 </section>
+
+<!-- ===== TIMELINE 3 ===== -->
+<section class="relative mb-24">
+  <div class="timeline-dot hidden md:block"></div>
+
+  <div class="md:grid md:grid-cols-2 md:gap-12 items-start">
+    <div class="space-y-4 md:pr-8">
+      <img src="MIT-1.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+      <img src="MIT-2.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+      <img src="MIT-3.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+      <img src="MIT-4.jpg" class="rounded-xl shadow-md object-cover w-full aspect-[4/3]">
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
+      <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-semibold">
+        📅 08.02.2026
+      </span>
+      <h2 class="text-2xl font-bold mt-4 mb-3 text-slate-800">
+        Orientasi Kurikulum Master Guide in Training – Daerah Kapa
+      </h2>
+      <p class="text-slate-600">
+        Sesi orientasi bagi memperkukuhkan pemahaman kurikulum Master Guide
+        in Training serta persediaan kepimpinan dalam pelayanan belia.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <!-- FOOTER -->
 <footer class="bg-white border-t">
   <div class="max-w-6xl mx-auto px-4 py-8 text-center space-y-4">

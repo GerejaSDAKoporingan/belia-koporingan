@@ -14,6 +14,43 @@ body {
   background-color: #f8fafc;
 }
 
+/* ===== MUSIC PLAYER ===== */
+.music-player {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.wave {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+}
+
+.wave span {
+  width: 4px;
+  height: 12px;
+  background: #2563eb;
+  border-radius: 2px;
+  animation: wave 1s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+.wave span:nth-child(2) { animation-delay: 0.1s; }
+.wave span:nth-child(3) { animation-delay: 0.2s; }
+.wave span:nth-child(4) { animation-delay: 0.3s; }
+.wave span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+  0% { height: 6px; }
+  50% { height: 24px; }
+  100% { height: 6px; }
+}
+
+/* ===== TIMELINE ===== */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -39,7 +76,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
   top: 10px;
-  z-index: 10;
 }
 
 @media (max-width: 768px) {
@@ -50,7 +86,7 @@ body {
 
 .image-placeholder {
   background: #e2e8f0;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -63,7 +99,31 @@ body {
 
 <body>
 
-<header class="bg-white border-b sticky top-0 z-50">
+<!-- 🎵 MUSIC PLAYER -->
+<div class="music-player">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <button id="musicBtn" onclick="toggleMusic()" class="bg-blue-700 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-800 transition">
+        ▶ Play Hymn
+      </button>
+
+      <div class="wave" id="wave">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <span class="text-sm text-slate-500 italic hidden md:block">
+      Mission Theme Song 2026
+    </span>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="mission-theme-song-2026.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- HEADER -->
+<header class="bg-white border-b">
   <div class="max-w-6xl mx-auto px-4 py-8 text-center">
     <h1 class="text-3xl md:text-4xl font-bold text-slate-800">
       Perjalanan Pelayanan Jabatan Belia<br>
@@ -73,6 +133,7 @@ body {
   </div>
 </header>
 
+<!-- TIMELINE -->
 <main class="max-w-6xl mx-auto px-4 py-16 relative">
 <div class="timeline-line hidden md:block"></div>
 
@@ -149,43 +210,35 @@ data.forEach((item, index) => {
 
 </main>
 
-<footer class="bg-white border-t mt-12">
+<!-- FOOTER -->
+<footer class="bg-white border-t">
   <div class="max-w-6xl mx-auto px-4 py-8 text-center space-y-4">
-
-    <button onclick="toggleMusic()" class="bg-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-800 transition">
-      ▶ Play Hymn
-    </button>
-
-    <audio id="bg-music" loop>
-      <source src="mission-theme-song-2026.mp3" type="audio/mpeg">
-    </audio>
-
     <div class="h-1 w-16 bg-blue-700 mx-auto rounded-full"></div>
-
     <p class="italic text-lg text-slate-600">
       "Grounded in the BIBLE and focused on the Mission"
     </p>
-
     <p class="text-slate-400 text-sm">
       Jabatan Belia Gereja SDA Koporingan © 2026
     </p>
-
   </div>
 </footer>
 
 <script>
-const music = document.getElementById("bg-music");
-const button = document.querySelector("button");
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+const waves = document.querySelectorAll(".wave span");
 
 music.volume = 0.3;
 
 function toggleMusic() {
   if (music.paused) {
     music.play();
-    button.textContent = "⏸ Pause Hymn";
+    btn.textContent = "⏸ Pause Hymn";
+    waves.forEach(w => w.style.animationPlayState = "running");
   } else {
     music.pause();
-    button.textContent = "▶ Play Hymn";
+    btn.textContent = "▶ Play Hymn";
+    waves.forEach(w => w.style.animationPlayState = "paused");
   }
 }
 </script>

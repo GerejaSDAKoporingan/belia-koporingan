@@ -258,7 +258,66 @@ tuntutan Adventurer dan Pathfinder.
 
 </div>
 </section>
+<!-- JOIN US SECTION -->
+<section class="bg-blue-50 py-20 mt-20">
+  <div class="max-w-4xl mx-auto px-4">
+    
+    <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+      <h2 class="text-3xl font-bold text-center text-blue-800">
+        JOIN US!
+      </h2>
+      <p class="text-center text-slate-600 mt-2">
+        Sertai Jabatan Belia Gereja SDA Koporingan dan bertumbuh bersama dalam pelayanan
+      </p>
 
+      <form class="mt-8 space-y-6" onsubmit="sendToWhatsApp(event)">
+        
+        <!-- Nama -->
+        <div>
+          <label class="block font-semibold mb-1">Nama</label>
+          <input id="nama" type="text" required
+            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+
+        <!-- Umur -->
+        <div>
+          <label class="block font-semibold mb-1">Umur</label>
+          <input id="umur" type="number" required
+            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+
+        <!-- Level -->
+        <div>
+          <label class="block font-semibold mb-1">Level</label>
+          <select id="level" required
+            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <option value="">Pilih Level</option>
+            <option>Adventurer</option>
+            <option>Pathfinder</option>
+            <option>Master Guide in Training</option>
+            <option>Lain-Lain</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label class="block font-semibold mb-1">Message</label>
+          <textarea id="message" rows="4"
+            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            placeholder="Tulis mesej atau pertanyaan anda di sini..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit"
+          class="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold text-lg hover:bg-blue-800 transition">
+          Hantar Melalui WhatsApp
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
 </main>
 
 <footer class="bg-white border-t">

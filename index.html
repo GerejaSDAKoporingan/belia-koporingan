@@ -15,16 +15,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  font-family:'Outfit',sans-serif;
-  background:#f8fafc;
-}
+body { font-family:'Outfit',sans-serif; background:#f8fafc; }
 
-/* Soft background dots */
 .bg-dots{
-  position:fixed;
-  inset:0;
-  z-index:-1;
+  position:fixed; inset:0; z-index:-1;
   background-color:#f8fafc;
   background-image:
     radial-gradient(circle at 20% 30%, rgba(59,130,246,.08) 2px, transparent 3px),
@@ -34,24 +28,19 @@ body {
   background-size:120px 120px;
   animation:moveDots 60s linear infinite;
 }
-
 @keyframes moveDots{
   to{background-position:120px 240px,-240px 120px,180px -180px,-120px -240px}
 }
 
-/* Timeline */
 .timeline-line{
   position:absolute;
-  top:0;
-  bottom:0;
+  top:0; bottom:0;
   left:20px;
   width:3px;
   background:linear-gradient(to bottom,#1e3a8a,#3b82f6);
 }
-
 .timeline-dot{
-  width:18px;
-  height:18px;
+  width:18px; height:18px;
   background:#1e3a8a;
   border-radius:50%;
   position:absolute;
@@ -59,49 +48,30 @@ body {
   transform:translateX(-50%);
   top:12px;
 }
-
 @media(min-width:768px){
-  .timeline-line{
-    left:50%;
-    transform:translateX(-50%);
-  }
-
-  .timeline-dot{
-    left:50%;
-  }
+  .timeline-line{ left:50%; transform:translateX(-50%); }
+  .timeline-dot{ left:50%; }
 }
 </style>
 </head>
 
 <body>
-  <!-- MUSIC BAR -->
+<div class="bg-dots"></div>
+
+<!-- MUSIC BAR -->
 <div class="sticky top-0 z-50 bg-white border-b">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
-
-    <!-- SDA LOGO -->
-    <img 
-      src="https://i.pinimg.com/originals/ea/1d/22/ea1d220a280be38853d3b8d056d7b89d.png"
-      alt="Seventh-day Adventist Logo"
-      class="w-10 h-10 object-contain"
-    >
-
-    <!-- PLAY BUTTON -->
-    <button
-      id="musicBtn"
-      onclick="toggleMusic()"
-      class="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold"
-    >
+    <img src="https://i.pinimg.com/originals/ea/1d/22/ea1d220a280be38853d3b8d056d7b89d.png"
+         class="w-10 h-10 object-contain">
+    <button id="musicBtn" onclick="toggleMusic()"
+      class="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
       ▶ Play Hymn
     </button>
-
-    <!-- AUDIO -->
     <audio id="bgMusic" loop>
       <source src="mission-theme-song-2026.mp3" type="audio/mpeg">
     </audio>
-
   </div>
 </div>
-<div class="bg-dots"></div>
 
 <!-- HEADER -->
 <header class="bg-white border-b">
@@ -115,7 +85,6 @@ body {
 </header>
 
 <main class="max-w-6xl mx-auto px-4 py-16 relative">
-
 <div class="timeline-line"></div>
 
 <!-- ======================= -->
@@ -123,56 +92,17 @@ body {
 <!-- ======================= -->
 <section class="relative mb-24 pl-12 md:pl-0">
 <div class="timeline-dot"></div>
-
 <div class="md:grid md:grid-cols-2 md:gap-12">
-
 <div class="space-y-4 md:pr-8">
 <img src="ay-1.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="ay-2.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="ay-3.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 </div>
-
-<div class="bg-white p-8 rounded-2xl shadow-md md:ml-8 space-y-5">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">
-📅 24.01.2026
-</span>
-
-<h2 class="text-2xl font-bold">
-Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali
-</h2>
-
-<p class="text-slate-600">
-Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
-Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani.
-</p>
-
-<div class="bg-blue-50 p-4 rounded-xl space-y-1">
-  <p>📅 <strong>Tarikh:</strong> 24 Januari 2026</p>
-  <p>📍 <strong>Tempat:</strong> Dewan Belia</p>
-  <p>⏰ <strong>Masa:</strong> 3.00 Petang</p>
-  <p>👥 <strong>Kehadiran:</strong> 22 orang</p>
+<div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
+<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 24.01.2026</span>
+<h2 class="text-2xl font-bold mt-4">Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali</h2>
+<p class="text-slate-600 mt-3">Program pembukaan tahun 2026 bagi perancangan dan pengukuhan rohani belia.</p>
 </div>
-
-<div>
-  <h3 class="font-semibold mt-4">📝 Ulasan Kehadiran:</h3>
-  <p class="text-slate-600 mt-1">
-    Kehadiran amat memberangsangkan. Beberapa ibu bapa turut hadir
-    bagi memberikan sokongan kepada anak-anak serta menyokong
-    aktiviti AY yang dijalankan 🤝
-  </p>
-</div>
-
-<div>
-  <h3 class="font-semibold mt-4">🎯 Aktiviti:</h3>
-  <p class="text-slate-600 mt-1">
-    Para peserta telah dibahagikan kepada tiga kumpulan yang terdiri
-    daripada Adventurer, Pathfinder, MIT dan MG. Aktiviti ini bertujuan
-    untuk mengenal pasti minat para belia Gereja SDA Koporingan serta
-    mengumpul cadangan aktiviti dan sasaran sepanjang tahun 2026 🌱
-  </p>
-</div>
-</div>
-
 </div>
 </section>
 
@@ -181,74 +111,18 @@ Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani.
 <!-- ======================= -->
 <section class="relative mb-24 pl-12 md:pl-0">
 <div class="timeline-dot"></div>
-
 <div class="md:grid md:grid-cols-2 md:gap-12">
-
 <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">
-📅 21.02.2026
-</span>
-
-<h2 class="text-2xl font-bold mt-4">
-Perjumpaan AY – Aktiviti Belia
-</h2>
-
-<p class="text-slate-600">
-Perjumpaan Adventist Youth yang diisi dengan pelbagai aktiviti
-bagi memperkukuhkan kesatuan dan pertumbuhan rohani belia.
-</p>
-
-<!-- Maklumat Program -->
-<div class="bg-blue-50 p-4 rounded-xl space-y-1 mt-4">
-  <p>📅 <strong>Tarikh:</strong> 21 Februari 2026</p>
-  <p>📍 <strong>Tempat:</strong> Dewan Belia</p>
-  <p>⏰ <strong>Masa:</strong> 3.00 Petang</p>
-  <p>👥 <strong>Kehadiran:</strong> 30 orang</p>
+<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 07.02.2026</span>
+<h2 class="text-2xl font-bold mt-4">Induction Night – Adventurer, Pathfinder, MIT & MG</h2>
+<p class="text-slate-600 mt-3">Majlis malam induksi komitmen pelayanan Tahun 2026.</p>
 </div>
-
-<!-- Ulasan Kehadiran -->
-<div>
-  <h3 class="font-semibold mt-4">📝 Ulasan Kehadiran:</h3>
-  <p class="text-slate-600 mt-1">
-    Kehadiran menunjukkan peningkatan dengan pertambahan ahli baharu
-    serta sokongan berterusan daripada ibu bapa dan keluarga.
-    Ucapan terima kasih juga dirakamkan kepada veteran MG Clifton
-    dan MG Jossy yang turut hadir memberikan sokongan.
-  </p>
-</div>
-
-<!-- Aktiviti -->
-<div>
-  <h3 class="font-semibold mt-4">🎯 Aktiviti:</h3>
-  <p class="text-slate-600 mt-1">
-    Aktiviti Mengenal Karakter dalam Alkitab telah dijalankan.
-    Ahli dibahagikan kepada dua kumpulan. Setiap kumpulan memilih
-    dua orang wakil untuk meneka mesej yang disampaikan oleh ahli
-    kumpulan lain tanpa menggunakan kata-kata, hanya melalui gerak
-    isyarat dan lakonan.
-  </p>
-</div>
-
-<!-- Ulasan Aktiviti -->
-<div>
-  <h3 class="font-semibold mt-4">💬 Ulasan:</h3>
-  <p class="text-slate-600 mt-1">
-    Aktiviti yang dijalankan berjaya menyampaikan mesej dan objektif
-    pertemuan untuk menarik minat belia menyertai AY.
-    Melalui aktiviti ini, belia dapat memahami bahawa orang di
-    sekeliling dapat mengenali siapa diri kita melalui perbuatan dan
-    tindakan kita, bukan hanya melalui kata-kata.
-  </p>
-</div>
-</div>
-
 <div class="space-y-4 md:pl-8 order-1 md:order-2">
 <img src="induction-1.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="induction-2.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="induction-3.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="induction-4.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 </div>
-
 </div>
 </section>
 
@@ -257,27 +131,18 @@ bagi memperkukuhkan kesatuan dan pertumbuhan rohani belia.
 <!-- ======================= -->
 <section class="relative mb-24 pl-12 md:pl-0">
 <div class="timeline-dot"></div>
-
 <div class="md:grid md:grid-cols-2 md:gap-12">
-
 <div class="space-y-4 md:pr-8">
 <img src="MIT-1.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="MIT-2.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="MIT-3.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="MIT-4.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 </div>
-
 <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
 <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 08.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">
-Orientasi Kurikulum Master Guide in Training – Daerah Kapa
-</h2>
-<p class="text-slate-600 mt-3">
-Sesi orientasi bagi memperkukuhkan pemahaman kurikulum serta
-persediaan kepimpinan.
-</p>
+<h2 class="text-2xl font-bold mt-4">Orientasi Kurikulum Master Guide in Training</h2>
+<p class="text-slate-600 mt-3">Sesi orientasi dan persediaan kepimpinan MIT.</p>
 </div>
-
 </div>
 </section>
 
@@ -288,12 +153,8 @@ persediaan kepimpinan.
 <div class="timeline-dot"></div>
 <div class="bg-white p-10 rounded-2xl shadow-md max-w-xl mx-auto">
 <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 15.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">
-Meeting Pertama Jabatan Belia Daerah Kapa
-</h2>
-<p class="text-slate-600 mt-3">
-Perjumpaan pertama jabatan belia peringkat daerah.
-</p>
+<h2 class="text-2xl font-bold mt-4">Meeting Pertama Jabatan Belia Daerah Kapa</h2>
+<p class="text-slate-600 mt-3">Perjumpaan penyelarasan hala tuju pelayanan belia.</p>
 </div>
 </section>
 
@@ -302,19 +163,12 @@ Perjumpaan pertama jabatan belia peringkat daerah.
 <!-- ======================= -->
 <section class="relative mb-24 pl-12 md:pl-0">
 <div class="timeline-dot"></div>
-
 <div class="md:grid md:grid-cols-2 md:gap-12">
-
 <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
 <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 21.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">
-Perjumpaan AY – Aktiviti Belia
-</h2>
-<p class="text-slate-600 mt-3">
-Aktiviti belia yang menekankan kesatuan dan pertumbuhan rohani.
-</p>
+<h2 class="text-2xl font-bold mt-4">Perjumpaan AY – Aktiviti Belia</h2>
+<p class="text-slate-600 mt-3">Aktiviti mengenal karakter dalam Alkitab.</p>
 </div>
-
 <div class="space-y-4 md:pl-8 order-1 md:order-2">
 <img src="AY-5.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="AY-6.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
@@ -322,7 +176,6 @@ Aktiviti belia yang menekankan kesatuan dan pertumbuhan rohani.
 <img src="AY-8.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="AY-9.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 </div>
-
 </div>
 </section>
 
@@ -331,19 +184,12 @@ Aktiviti belia yang menekankan kesatuan dan pertumbuhan rohani.
 <!-- ======================= -->
 <section class="relative mb-24 pl-12 md:pl-0">
 <div class="timeline-dot"></div>
-
 <div class="md:grid md:grid-cols-2 md:gap-12">
-
 <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
 <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 22.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">
-Perjumpaan Adventurer & Pathfinder – Progressive Class
-</h2>
-<p class="text-slate-600 mt-3">
-Pengenalan lagu, ikrar dan progressive class.
-</p>
+<h2 class="text-2xl font-bold mt-4">Perjumpaan Adventurer & Pathfinder – Progressive Class</h2>
+<p class="text-slate-600 mt-3">Pengenalan lagu, ikrar dan progressive class.</p>
 </div>
-
 <div class="grid grid-cols-2 gap-4 md:pl-8 order-1 md:order-2">
 <img src="AD-1.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="AD-2.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
@@ -354,87 +200,24 @@ Pengenalan lagu, ikrar dan progressive class.
 <img src="AD-7.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 <img src="AD-8.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
 </div>
-
 </div>
 </section>
 
 </main>
 
-<!-- ======================= -->
-<!-- JOIN US SECTION -->
-<!-- ======================= -->
-<section class="bg-blue-50 py-20 mt-20">
-<div class="max-w-4xl mx-auto px-4">
-<div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
-<h2 class="text-3xl font-bold text-center text-blue-800">JOIN US!</h2>
-
-<form class="mt-8 space-y-6" onsubmit="sendToWhatsApp(event)">
-<input id="nama" placeholder="Nama" required class="w-full border rounded-xl px-4 py-3">
-<input id="umur" type="number" placeholder="Umur" required class="w-full border rounded-xl px-4 py-3">
-<select id="level" required class="w-full border rounded-xl px-4 py-3">
-<option value="">Pilih Level</option>
-<option>Adventurer</option>
-<option>Pathfinder</option>
-<option>Master Guide in Training</option>
-<option>Lain-Lain</option>
-</select>
-<textarea id="message" rows="4" placeholder="Message" class="w-full border rounded-xl px-4 py-3"></textarea>
-
-<button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold">
-Hantar
-</button>
-</form>
-</div>
-</div>
-</section>
-
-<footer class="bg-white border-t">
-<div class="max-w-6xl mx-auto px-4 py-10 text-center">
-<p class="italic text-lg text-slate-600">
-"Grounded in the BIBLE and focused on the Mission"
-</p>
-<p class="text-slate-400 text-sm mt-4">
-This website was prepared by <strong>Erlandson Keith Subin</strong><br>
-Jabatan Multimedia Gereja SDA Koporingan (2026–2027)<br>
-All rights reserved.
-</p>
-</div>
-</footer>
-
 <script>
-function sendToWhatsApp(event){
-event.preventDefault();
-const nama=document.getElementById("nama").value;
-const umur=document.getElementById("umur").value;
-const level=document.getElementById("level").value;
-const message=document.getElementById("message").value;
-
-const text=`Hello Jabatan Belia Gereja SDA Koporingan 👋
-
-Nama: ${nama}
-Umur: ${umur}
-Level: ${level}
-
-Message:
-${message}`;
-
-window.location.href=`https://wa.me/60165850504?text=${encodeURIComponent(text)}`;
-}
-</script>
-<script>
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
+const music=document.getElementById("bgMusic");
+const btn=document.getElementById("musicBtn");
 function toggleMusic(){
-  if(music.paused){
-    music.play();
-    music.volume = 0.3;
-    btn.textContent = "⏸ Pause Hymn";
-  }else{
-    music.pause();
-    btn.textContent = "▶ Play Hymn";
-  }
+if(music.paused){
+music.play(); music.volume=0.3;
+btn.textContent="⏸ Pause Hymn";
+}else{
+music.pause();
+btn.textContent="▶ Play Hymn";
+}
 }
 </script>
+
 </body>
 </html>

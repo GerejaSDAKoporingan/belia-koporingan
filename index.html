@@ -20,12 +20,8 @@ body {
   font-family:'Outfit',sans-serif;
   background:#f8fafc;
 }
-
-/* Soft dots background */
 .bg-dots{
-  position:fixed;
-  inset:0;
-  z-index:-1;
+  position:fixed; inset:0; z-index:-1;
   background-color:#f8fafc;
   background-image:
     radial-gradient(circle at 20% 30%, rgba(59,130,246,.08) 2px, transparent 3px),
@@ -36,44 +32,16 @@ body {
   animation:moveDots 60s linear infinite;
 }
 @keyframes moveDots{
-  from{background-position:0 0,0 0,0 0,0 0}
   to{background-position:120px 240px,-240px 120px,180px -180px,-120px -240px}
 }
-
-/* Music bar */
-.music-player{
-  position:sticky;top:0;z-index:50;
-  background:white;border-bottom:1px solid #e5e7eb;
-}
-
-/* Wave */
-.wave span{
-  width:4px;height:8px;background:#1e40af;
-  display:inline-block;
-  animation:wave 1s infinite ease-in-out;
-  animation-play-state:paused;
-}
-.wave span:nth-child(2){animation-delay:.1s}
-.wave span:nth-child(3){animation-delay:.2s}
-.wave span:nth-child(4){animation-delay:.3s}
-.wave span:nth-child(5){animation-delay:.4s}
-@keyframes wave{
-  0%,100%{height:6px}
-  50%{height:20px}
-}
-
-/* Timeline */
 .timeline-line{
   position:absolute;left:50%;transform:translateX(-50%);
-  width:3px;
-  background:linear-gradient(to bottom,#1e3a8a,#3b82f6);
+  width:3px;background:linear-gradient(to bottom,#1e3a8a,#3b82f6);
   top:0;bottom:0;
 }
 .timeline-dot{
-  width:18px;height:18px;background:#1e3a8a;
-  border-radius:50%;
-  position:absolute;left:50%;transform:translateX(-50%);
-  top:12px;
+  width:18px;height:18px;background:#1e3a8a;border-radius:50%;
+  position:absolute;left:50%;transform:translateX(-50%);top:12px;
 }
 @media(max-width:768px){
   .timeline-line,.timeline-dot{left:20px}
@@ -82,26 +50,7 @@ body {
 </head>
 
 <body>
-
 <div class="bg-dots"></div>
-
-<!-- MUSIC BAR -->
-<div class="music-player">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-    <div class="flex items-center gap-3">
-      <img src="https://i.pinimg.com/originals/ea/1d/22/ea1d220a280be38853d3b8d056d7b89d.png" class="w-10">
-      <button id="musicBtn" onclick="toggleMusic()" class="bg-blue-700 text-white px-4 py-2 rounded-full">
-        ▶ Play Hymn
-      </button>
-      <div class="wave flex gap-1">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-    <audio id="bgMusic" loop>
-      <source src="mission-theme-song-2026.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-</div>
 
 <!-- HEADER -->
 <header class="bg-white border-b">
@@ -121,128 +70,60 @@ body {
 <!-- 24.01.2026 -->
 <section class="relative mb-24">
 <div class="timeline-dot hidden md:block"></div>
+
 <div class="md:grid md:grid-cols-2 md:gap-12">
-<div class="space-y-4 md:pr-8">
-<img src="ay-1.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="ay-2.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="ay-3.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-</div>
-<div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 24.01.2026</span>
-<h2 class="text-2xl font-bold mt-4">Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali</h2>
-<p class="text-slate-600 mt-3">
-Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth, Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani. 
-📅 Tarikh: 24 Januari 2026
-📍 Tempat: Dewan Belia
-⏰ Masa: 3.00 Petang
-👥 Kehadiran: 22 orang
+  <!-- Images -->
+  <div class="space-y-4 md:pr-8">
+    <img src="ay-1.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
+    <img src="ay-2.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
+    <img src="ay-3.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
+  </div>
 
-📝 Ulasan Kehadiran:
+  <!-- Content -->
+  <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8 space-y-5">
+    <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 24.01.2026</span>
 
-Kehadiran amat memberangsangkan. Beberapa ibu bapa turut hadir bagi memberikan sokongan kepada anak-anak serta menyokong aktiviti AY yang dijalankan
+    <h2 class="text-2xl font-bold">
+      Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali
+    </h2>
 
-🎯 Aktiviti:
+    <p class="text-slate-600">
+      Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
+      Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani.
+    </p>
 
-Para peserta telah dibahagikan kepada tiga kumpulan yang terdiri daripada Adventurer, Pathfinder, MIT dan MG. Aktiviti ini bertujuan untuk mengenal pasti minat para belia Gereja SDA Koporingan serta mengumpul cadangan aktiviti dan sasaran yang ingin dilaksanakan sepanjang tahun 2026 🌱
-</p>
-</div>
-</div>
-</section>
+    <!-- Maklumat -->
+    <div>
+      <h3 class="font-semibold mb-2">📌 Maklumat Program</h3>
+      <ul class="text-slate-600 list-disc pl-5 space-y-1">
+        <li><strong>Tarikh:</strong> 24 Januari 2026</li>
+        <li><strong>Tempat:</strong> Dewan Belia</li>
+        <li><strong>Masa:</strong> 3.00 Petang</li>
+        <li><strong>Kehadiran:</strong> 22 orang</li>
+      </ul>
+    </div>
 
-<!-- 07.02.2026 -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
-<div class="md:grid md:grid-cols-2 md:gap-12">
-<div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 07.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">Induction Night – Adventurer, Pathfinder, MIT & MG</h2>
-<p class="text-slate-600 mt-3">
-Penyertaan Gereja SDA Koporingan dalam gabungan Daerah Tamparuli bertempat di Gereja SDA Pangasaan Tamparuli bagi majlis malam induksi di mana para peserta menyahut panggilan pelayanan dan ikrar bagi Tahun 2026.
-</p>
-</div>
-<div class="space-y-4 md:pl-8 order-1 md:order-2">
-<img src="induction-1.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="induction-2.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="induction-3.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="induction-4.jpeg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-</div>
-</div>
-</section>
+    <!-- Ulasan -->
+    <div>
+      <h3 class="font-semibold mb-2">📝 Ulasan Kehadiran</h3>
+      <p class="text-slate-600">
+        Kehadiran amat memberangsangkan. Beberapa ibu bapa turut hadir
+        bagi memberikan sokongan kepada anak-anak serta menyokong
+        aktiviti AY yang dijalankan.
+      </p>
+    </div>
 
-<!-- 08.02.2026 -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
-<div class="md:grid md:grid-cols-2 md:gap-12">
-<div class="space-y-4 md:pr-8">
-<img src="MIT-1.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="MIT-2.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="MIT-3.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="MIT-4.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-</div>
-<div class="bg-white p-8 rounded-2xl shadow-md md:ml-8">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 08.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">Orientasi Kurikulum Master Guide in Training – Daerah Kapa</h2>
-<p class="text-slate-600 mt-3">
-Sesi orientasi bagi memperkukuhkan pemahaman kurikulum serta persediaan kepimpinan Master Guide in Training.
-</p>
-</div>
-</div>
-</section>
-
-<!-- 15.02.2026 -->
-<section class="relative mb-24 text-center">
-<div class="timeline-dot hidden md:block"></div>
-<div class="bg-white p-10 rounded-2xl shadow-md max-w-xl mx-auto">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 15.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">Meeting Pertama Jabatan Belia Daerah Kapa</h2>
-<p class="text-slate-600 mt-3">
-Perjumpaan pertama jabatan belia peringkat daerah bagi perancangan, penyelarasan serta penetapan hala tuju pelayanan belia tahun 2026.
-</p>
-</div>
-</section>
-
-<!-- 21.02.2026 -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
-<div class="md:grid md:grid-cols-2 md:gap-12">
-<div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 21.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">Perjumpaan AY – Aktiviti Belia</h2>
-<p class="text-slate-600 mt-3">
-Aktiviti belia yang menekankan kesatuan, kerjasama dan pertumbuhan rohani dalam kalangan belia Gereja SDA Koporingan.
-</p>
-</div>
-<div class="space-y-4 md:pl-8 order-1 md:order-2">
-<img src="AY-5.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AY-6.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AY-7.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AY-8.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AY-9.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-</div>
-</div>
-</section>
-
-<!-- 22.02.2026 -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
-<div class="md:grid md:grid-cols-2 md:gap-12">
-<div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
-<span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 22.02.2026</span>
-<h2 class="text-2xl font-bold mt-4">Perjumpaan Adventurer & Pathfinder – Progressive Class</h2>
-<p class="text-slate-600 mt-3">
-Pengenalan lagu, ikrar dan progressive class bagi memenuhi tuntutan Adventurer dan Pathfinder dengan kehadiran MIT dan MG sebagai mentor.
-</p>
-</div>
-<div class="grid grid-cols-2 gap-4 md:pl-8 order-1 md:order-2">
-<img src="AD-1.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-2.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-3.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-4.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-5.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-6.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-7.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-<img src="AD-8.jpg" class="rounded-xl shadow-md aspect-[4/3] object-cover">
-</div>
+    <!-- Aktiviti -->
+    <div>
+      <h3 class="font-semibold mb-2">🎯 Aktiviti</h3>
+      <p class="text-slate-600">
+        Para peserta dibahagikan kepada tiga kumpulan yang terdiri
+        daripada Adventurer, Pathfinder, MIT dan MG.
+        Aktiviti ini bertujuan mengenal pasti minat belia serta
+        mengumpul cadangan aktiviti sepanjang tahun 2026 🌱
+      </p>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -262,31 +143,6 @@ All rights reserved.
 </p>
 </div>
 </footer>
-
-<script>
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
-const waves=document.querySelectorAll(".wave span");
-music.volume=0.3;
-
-let autoScroll;
-function startScroll(){autoScroll=setInterval(()=>window.scrollBy(0,1),30);}
-function stopScroll(){clearInterval(autoScroll);}
-
-function toggleMusic(){
-  if(music.paused){
-    music.play();
-    btn.textContent="⏸ Pause Hymn";
-    waves.forEach(w=>w.style.animationPlayState="running");
-    startScroll();
-  }else{
-    music.pause();
-    btn.textContent="▶ Play Hymn";
-    waves.forEach(w=>w.style.animationPlayState="paused");
-    stopScroll();
-  }
-}
-</script>
 
 </body>
 </html>

@@ -333,6 +333,30 @@ All rights reserved.
 </p>
 </div>
 </footer>
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
 
+  const nama = document.getElementById("nama").value;
+  const umur = document.getElementById("umur").value;
+  const level = document.getElementById("level").value;
+  const message = document.getElementById("message").value;
+
+  const text =
+`Hello Jabatan Belia Gereja SDA Koporingan 👋
+
+Nama: ${nama}
+Umur: ${umur}
+Level: ${level}
+
+Message:
+${message}`;
+
+  const encodedText = encodeURIComponent(text);
+  const phoneNumber = "60165850504";
+
+  window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
+}
+</script>
 </body>
 </html>

@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Perjalanan Pelayanan Jabatan Belia 2026</title>
 
-<!-- WhatsApp Preview -->
 <meta property="og:title" content="Perjalanan Pelayanan Jabatan Belia Gereja SDA Koporingan – 2026">
-<meta property="og:description" content="Dokumentasi perjalanan dan aktiviti Jabatan Belia Gereja SDA Koporingan sepanjang tahun 2026. Grounded in the BIBLE and focused on the Mission.">
+<meta property="og:description" content="Dokumentasi perjalanan dan aktiviti Jabatan Belia Gereja SDA Koporingan sepanjang tahun 2026.">
 <meta property="og:image" content="https://gerejasdakoporingan.github.io/belia-koporingan/induction-1.jpeg">
 <meta property="og:url" content="https://gerejasdakoporingan.github.io/belia-koporingan/">
 <meta property="og:type" content="website">
@@ -16,11 +15,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { font-family:'Outfit',sans-serif; background:#f8fafc; }
+body {
+  font-family:'Outfit',sans-serif;
+  background:#f8fafc;
+}
 
-/* Soft dots */
+/* Soft background dots */
 .bg-dots{
-  position:fixed; inset:0; z-index:-1;
+  position:fixed;
+  inset:0;
+  z-index:-1;
   background-color:#f8fafc;
   background-image:
     radial-gradient(circle at 20% 30%, rgba(59,130,246,.08) 2px, transparent 3px),
@@ -30,21 +34,41 @@ body { font-family:'Outfit',sans-serif; background:#f8fafc; }
   background-size:120px 120px;
   animation:moveDots 60s linear infinite;
 }
+
 @keyframes moveDots{
   to{background-position:120px 240px,-240px 120px,180px -180px,-120px -240px}
 }
 
+/* Timeline */
 .timeline-line{
-  position:absolute;left:50%;transform:translateX(-50%);
-  width:3px;background:linear-gradient(to bottom,#1e3a8a,#3b82f6);
-  top:0;bottom:0;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:20px;
+  width:3px;
+  background:linear-gradient(to bottom,#1e3a8a,#3b82f6);
 }
+
 .timeline-dot{
-  width:18px;height:18px;background:#1e3a8a;border-radius:50%;
-  position:absolute;left:50%;transform:translateX(-50%);top:12px;
+  width:18px;
+  height:18px;
+  background:#1e3a8a;
+  border-radius:50%;
+  position:absolute;
+  left:20px;
+  transform:translateX(-50%);
+  top:12px;
 }
-@media(max-width:768px){
-  .timeline-line,.timeline-dot{left:20px}
+
+@media(min-width:768px){
+  .timeline-line{
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  .timeline-dot{
+    left:50%;
+  }
 }
 </style>
 </head>
@@ -64,13 +88,15 @@ body { font-family:'Outfit',sans-serif; background:#f8fafc; }
 </header>
 
 <main class="max-w-6xl mx-auto px-4 py-16 relative">
-<div class="timeline-line hidden md:block"></div>
+
+<div class="timeline-line"></div>
 
 <!-- ======================= -->
-<!-- 24.01.2026 (Formatted) -->
+<!-- 24.01.2026 -->
 <!-- ======================= -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
+<section class="relative mb-24 pl-12 md:pl-0">
+<div class="timeline-dot"></div>
+
 <div class="md:grid md:grid-cols-2 md:gap-12">
 
 <div class="space-y-4 md:pr-8">
@@ -81,54 +107,24 @@ body { font-family:'Outfit',sans-serif; background:#f8fafc; }
 
 <div class="bg-white p-8 rounded-2xl shadow-md md:ml-8 space-y-5">
 <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 24.01.2026</span>
-
 <h2 class="text-2xl font-bold">
 Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali
 </h2>
-
 <p class="text-slate-600">
 Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
 Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani.
 </p>
-
-<div>
-<h3 class="font-semibold">📌 Maklumat Program</h3>
-<ul class="list-disc pl-5 text-slate-600 mt-2 space-y-1">
-<li><strong>Tarikh:</strong> 24 Januari 2026</li>
-<li><strong>Tempat:</strong> Dewan Belia</li>
-<li><strong>Masa:</strong> 3.00 Petang</li>
-<li><strong>Kehadiran:</strong> 22 orang</li>
-</ul>
 </div>
 
-<div>
-<h3 class="font-semibold">📝 Ulasan Kehadiran</h3>
-<p class="text-slate-600 mt-1">
-Kehadiran amat memberangsangkan. Beberapa ibu bapa turut hadir
-bagi memberikan sokongan kepada anak-anak serta menyokong
-aktiviti AY yang dijalankan.
-</p>
-</div>
-
-<div>
-<h3 class="font-semibold">🎯 Aktiviti</h3>
-<p class="text-slate-600 mt-1">
-Peserta dibahagikan kepada tiga kumpulan terdiri daripada
-Adventurer, Pathfinder, MIT dan MG. Aktiviti ini bertujuan
-mengenal pasti minat belia serta mengumpul cadangan aktiviti
-sepanjang tahun 2026.
-</p>
-</div>
-
-</div>
 </div>
 </section>
 
 <!-- ======================= -->
 <!-- 07.02.2026 -->
 <!-- ======================= -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
+<section class="relative mb-24 pl-12 md:pl-0">
+<div class="timeline-dot"></div>
+
 <div class="md:grid md:grid-cols-2 md:gap-12">
 
 <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
@@ -138,8 +134,7 @@ Induction Night – Adventurer, Pathfinder, MIT & MG
 </h2>
 <p class="text-slate-600 mt-3">
 Penyertaan Gereja SDA Koporingan dalam gabungan Daerah Tamparuli
-bagi majlis malam induksi di mana para peserta menyahut panggilan
-pelayanan dan ikrar bagi Tahun 2026.
+bagi majlis malam induksi Tahun 2026.
 </p>
 </div>
 
@@ -156,8 +151,9 @@ pelayanan dan ikrar bagi Tahun 2026.
 <!-- ======================= -->
 <!-- 08.02.2026 -->
 <!-- ======================= -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
+<section class="relative mb-24 pl-12 md:pl-0">
+<div class="timeline-dot"></div>
+
 <div class="md:grid md:grid-cols-2 md:gap-12">
 
 <div class="space-y-4 md:pr-8">
@@ -174,7 +170,7 @@ Orientasi Kurikulum Master Guide in Training – Daerah Kapa
 </h2>
 <p class="text-slate-600 mt-3">
 Sesi orientasi bagi memperkukuhkan pemahaman kurikulum serta
-persediaan kepimpinan Master Guide in Training.
+persediaan kepimpinan.
 </p>
 </div>
 
@@ -184,16 +180,15 @@ persediaan kepimpinan Master Guide in Training.
 <!-- ======================= -->
 <!-- 15.02.2026 -->
 <!-- ======================= -->
-<section class="relative mb-24 text-center">
-<div class="timeline-dot hidden md:block"></div>
+<section class="relative mb-24 pl-12 md:pl-0 text-center">
+<div class="timeline-dot"></div>
 <div class="bg-white p-10 rounded-2xl shadow-md max-w-xl mx-auto">
 <span class="bg-blue-700 text-white px-4 py-1 rounded-full">📅 15.02.2026</span>
 <h2 class="text-2xl font-bold mt-4">
 Meeting Pertama Jabatan Belia Daerah Kapa
 </h2>
 <p class="text-slate-600 mt-3">
-Perjumpaan pertama jabatan belia peringkat daerah bagi
-perancangan, penyelarasan serta penetapan hala tuju pelayanan.
+Perjumpaan pertama jabatan belia peringkat daerah.
 </p>
 </div>
 </section>
@@ -201,8 +196,9 @@ perancangan, penyelarasan serta penetapan hala tuju pelayanan.
 <!-- ======================= -->
 <!-- 21.02.2026 -->
 <!-- ======================= -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
+<section class="relative mb-24 pl-12 md:pl-0">
+<div class="timeline-dot"></div>
+
 <div class="md:grid md:grid-cols-2 md:gap-12">
 
 <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
@@ -211,8 +207,7 @@ perancangan, penyelarasan serta penetapan hala tuju pelayanan.
 Perjumpaan AY – Aktiviti Belia
 </h2>
 <p class="text-slate-600 mt-3">
-Aktiviti belia yang menekankan kesatuan, kerjasama dan
-pertumbuhan rohani dalam kalangan belia Gereja SDA Koporingan.
+Aktiviti belia yang menekankan kesatuan dan pertumbuhan rohani.
 </p>
 </div>
 
@@ -230,8 +225,9 @@ pertumbuhan rohani dalam kalangan belia Gereja SDA Koporingan.
 <!-- ======================= -->
 <!-- 22.02.2026 -->
 <!-- ======================= -->
-<section class="relative mb-24">
-<div class="timeline-dot hidden md:block"></div>
+<section class="relative mb-24 pl-12 md:pl-0">
+<div class="timeline-dot"></div>
+
 <div class="md:grid md:grid-cols-2 md:gap-12">
 
 <div class="bg-white p-8 rounded-2xl shadow-md md:mr-8 order-2 md:order-1">
@@ -240,8 +236,7 @@ pertumbuhan rohani dalam kalangan belia Gereja SDA Koporingan.
 Perjumpaan Adventurer & Pathfinder – Progressive Class
 </h2>
 <p class="text-slate-600 mt-3">
-Pengenalan lagu, ikrar dan progressive class bagi memenuhi
-tuntutan Adventurer dan Pathfinder.
+Pengenalan lagu, ikrar dan progressive class.
 </p>
 </div>
 
@@ -260,69 +255,37 @@ tuntutan Adventurer dan Pathfinder.
 </section>
 
 </main>
+
+<!-- ======================= -->
 <!-- JOIN US SECTION -->
+<!-- ======================= -->
 <section class="bg-blue-50 py-20 mt-20">
-  <div class="max-w-4xl mx-auto px-4">
-    
-    <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
-      <h2 class="text-3xl font-bold text-center text-blue-800">
-        JOIN US!
-      </h2>
-      <p class="text-center text-slate-600 mt-2">
-        Sertai Jabatan Belia Gereja SDA Koporingan dan bertumbuh bersama dalam pelayanan
-      </p>
+<div class="max-w-4xl mx-auto px-4">
+<div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+<h2 class="text-3xl font-bold text-center text-blue-800">JOIN US!</h2>
 
-      <form class="mt-8 space-y-6" onsubmit="sendToWhatsApp(event)">
-        
-        <!-- Nama -->
-        <div>
-          <label class="block font-semibold mb-1">Nama</label>
-          <input id="nama" type="text" required
-            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
-        </div>
+<form class="mt-8 space-y-6" onsubmit="sendToWhatsApp(event)">
+<input id="nama" placeholder="Nama" required class="w-full border rounded-xl px-4 py-3">
+<input id="umur" type="number" placeholder="Umur" required class="w-full border rounded-xl px-4 py-3">
+<select id="level" required class="w-full border rounded-xl px-4 py-3">
+<option value="">Pilih Level</option>
+<option>Adventurer</option>
+<option>Pathfinder</option>
+<option>Master Guide in Training</option>
+<option>Lain-Lain</option>
+</select>
+<textarea id="message" rows="4" placeholder="Message" class="w-full border rounded-xl px-4 py-3"></textarea>
 
-        <!-- Umur -->
-        <div>
-          <label class="block font-semibold mb-1">Umur</label>
-          <input id="umur" type="number" required
-            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
-        </div>
-
-        <!-- Level -->
-        <div>
-          <label class="block font-semibold mb-1">Level</label>
-          <select id="level" required
-            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
-            <option value="">Pilih Level</option>
-            <option>Adventurer</option>
-            <option>Pathfinder</option>
-            <option>Master Guide in Training</option>
-            <option>Lain-Lain</option>
-          </select>
-        </div>
-
-        <!-- Message -->
-        <div>
-          <label class="block font-semibold mb-1">Message</label>
-          <textarea id="message" rows="4"
-            class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            placeholder="Tulis mesej atau pertanyaan anda di sini..."></textarea>
-        </div>
-
-        <!-- Submit -->
-        <button type="submit"
-          class="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold text-lg hover:bg-blue-800 transition">
-          Hantar
-        </button>
-
-      </form>
-    </div>
-
-  </div>
+<button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-xl font-semibold">
+Hantar
+</button>
+</form>
+</div>
+</div>
 </section>
+
 <footer class="bg-white border-t">
 <div class="max-w-6xl mx-auto px-4 py-10 text-center">
-<div class="h-1 w-16 bg-blue-700 mx-auto mb-4 rounded-full"></div>
 <p class="italic text-lg text-slate-600">
 "Grounded in the BIBLE and focused on the Mission"
 </p>
@@ -333,16 +296,16 @@ All rights reserved.
 </p>
 </div>
 </footer>
+
 <script>
-function sendToWhatsApp(event) {
-  event.preventDefault();
+function sendToWhatsApp(event){
+event.preventDefault();
+const nama=document.getElementById("nama").value;
+const umur=document.getElementById("umur").value;
+const level=document.getElementById("level").value;
+const message=document.getElementById("message").value;
 
-  const nama = document.getElementById("nama").value;
-  const umur = document.getElementById("umur").value;
-  const level = document.getElementById("level").value;
-  const message = document.getElementById("message").value;
-
-  const text = `Hello Jabatan Belia Gereja SDA Koporingan 👋
+const text=`Hello Jabatan Belia Gereja SDA Koporingan 👋
 
 Nama: ${nama}
 Umur: ${umur}
@@ -351,11 +314,9 @@ Level: ${level}
 Message:
 ${message}`;
 
-  const encodedText = encodeURIComponent(text);
-  const phoneNumber = "60165850504";
-
-  window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
+window.location.href=`https://wa.me/60165850504?text=${encodeURIComponent(text)}`;
 }
 </script>
+
 </body>
 </html>

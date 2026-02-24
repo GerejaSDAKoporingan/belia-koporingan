@@ -74,6 +74,33 @@ body {
 </head>
 
 <body>
+  <!-- MUSIC BAR -->
+<div class="sticky top-0 z-50 bg-white border-b">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+
+    <!-- SDA LOGO -->
+    <img 
+      src="https://i.pinimg.com/originals/ea/1d/22/ea1d220a280be38853d3b8d056d7b89d.png"
+      alt="Seventh-day Adventist Logo"
+      class="w-10 h-10 object-contain"
+    >
+
+    <!-- PLAY BUTTON -->
+    <button
+      id="musicBtn"
+      onclick="toggleMusic()"
+      class="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold"
+    >
+      ▶ Play Hymn
+    </button>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" loop>
+      <source src="mission-theme-song-2026.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+</div>
 <div class="bg-dots"></div>
 
 <!-- HEADER -->
@@ -317,6 +344,20 @@ ${message}`;
 window.location.href=`https://wa.me/60165850504?text=${encodeURIComponent(text)}`;
 }
 </script>
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
 
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    music.volume = 0.3;
+    btn.textContent = "⏸ Pause Hymn";
+  }else{
+    music.pause();
+    btn.textContent = "▶ Play Hymn";
+  }
+}
+</script>
 </body>
 </html>

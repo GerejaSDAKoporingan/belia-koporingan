@@ -12,331 +12,356 @@
 <meta property="og:type" content="website">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          apple: {
+            text: '#1d1d1f',
+            gray: '#86868b',
+            bg: '#fbfbfd',
+            blue: '#0066cc',
+            card: '#ffffff'
+          }
+        },
+        boxShadow: {
+          'apple': '0 4px 24px rgba(0, 0, 0, 0.04)',
+          'apple-hover': '0 10px 40px rgba(0, 0, 0, 0.08)'
+        }
+      }
+    }
+  }
+</script>
 
 <style>
-body{
-  font-family:'Outfit',sans-serif;
-  background:#f3f6fb;
-  overflow-x:hidden;
+body {
+  background-color: #fbfbfd;
+  color: #1d1d1f;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===== LOADER ===== */
-#loader{
-  position:fixed;
-  inset:0;
-  background:#0f172a;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  color:white;
-  font-weight:600;
-  letter-spacing:3px;
+/* ===== MINIMALIST LOADER ===== */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #1d1d1f;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: opacity 0.5s ease;
 }
-.loader-bar{
-  width:0;
-  height:3px;
-  background:#3b82f6;
-  margin-top:12px;
-  animation:load 2s forwards;
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f5f5f7;
+  border-top: 3px solid #0066cc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
 }
-@keyframes load{
-  to{width:220px;}
-}
-
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(135deg,#0f172a,#1e3a8a);
-  color:white;
-}
-
-/* ===== TIMELINE ===== */
-.timeline-line{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  width:3px;
-  top:0;
-  bottom:0;
-  background:linear-gradient(to bottom,#1e40af,#60a5fa);
-  box-shadow:0 0 15px rgba(59,130,246,.5);
-}
-.timeline-dot{
-  width:18px;
-  height:18px;
-  background:#1e40af;
-  border-radius:50%;
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  top:30px;
-  box-shadow:0 0 12px rgba(30,64,175,.7);
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* ===== ANIMATION ===== */
-.fade-up{
-  opacity:0;
-  transform:translateY(60px);
-  transition:all .8s ease;
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Apple-like easing */
 }
-.fade-up.show{
-  opacity:1;
-  transform:translateY(0);
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== IMAGE EFFECT ===== */
-img{
-  transition:transform .6s ease, box-shadow .6s ease;
+img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
-img:hover{
-  transform:scale(1.04);
-  box-shadow:0 25px 50px rgba(0,0,0,.25);
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* ===== TIMELINE ===== */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  background: #e5e5ea;
 }
 
 @media(max-width:768px){
-.timeline-line,.timeline-dot{
-  left:20px;
-  transform:none;
-}
+  .timeline-line {
+    display: none; /* Hide line on mobile for cleaner look */
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOADER -->
+<audio id="bg-music" loop preload="auto">
+  <source src="mission-theme-song-2026.mp3" type="audio/mpeg">
+</audio>
+
 <div id="loader">
-  <div>
-    JABATAN BELIA 2026
-    <div class="loader-bar"></div>
-  </div>
+  <div class="loader-spinner"></div>
+  <div class="text-sm text-apple-gray tracking-widest">JABATAN BELIA 2026</div>
 </div>
 
-<!-- HERO -->
-<section class="hero py-28 text-center">
-  <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-      Perjalanan Pelayanan Jabatan Belia<br>
-      Gereja SDA Koporingan – 2026
+<section class="py-32 text-center px-4">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-apple-text mb-6">
+      Perjalanan Pelayanan<br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0066cc] to-[#5ac8fa]">Jabatan Belia 2026</span>
     </h1>
-    <div class="w-24 h-1 bg-blue-400 mx-auto mt-6 rounded-full"></div>
+    <p class="text-xl md:text-2xl text-apple-gray font-medium max-w-2xl mx-auto">
+      Gereja SDA Koporingan
+    </p>
   </div>
 </section>
 
-<main class="max-w-6xl mx-auto px-4 py-28 relative">
-<div class="timeline-line"></div>
+<main class="max-w-6xl mx-auto px-4 py-16 relative">
+<div class="timeline-line hidden md:block"></div>
 
-<!-- ======================= -->
-<!-- 24.01.2026 -->
-<!-- ======================= -->
 <section class="relative mb-32 fade-up">
-<div class="timeline-dot"></div>
-<div class="md:grid md:grid-cols-2 md:gap-16 items-start">
+  <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+    
+    <div class="space-y-4 mb-8 md:mb-0">
+      <img src="ay-1.jpeg" class="rounded-[2rem] shadow-apple aspect-[4/3] object-cover w-full">
+      <div class="grid grid-cols-2 gap-4">
+        <img src="ay-2.jpeg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+        <img src="ay-3.jpeg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+      </div>
+    </div>
 
-<div class="space-y-6">
-<img src="ay-1.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="ay-2.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="ay-3.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-</div>
+    <div class="bg-apple-card p-10 md:p-12 rounded-[2.5rem] shadow-apple hover:shadow-apple-hover transition-shadow duration-300">
+      <p class="text-apple-blue font-semibold text-sm tracking-widest uppercase mb-3">24 Januari 2026</p>
+      <h2 class="text-3xl font-bold tracking-tight mb-5">Perjumpaan AY, Adventurer & Pathfinder Pertama</h2>
+      
+      <p class="text-apple-gray text-lg leading-relaxed mb-8">
+        Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth, Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani.
+      </p>
 
-<div class="bg-white p-10 rounded-3xl shadow-2xl space-y-6">
-<span class="text-blue-700 font-semibold text-sm tracking-wide">📅 24.01.2026</span>
-<h2 class="text-3xl font-bold">Perjumpaan AY, Adventurer & Pathfinder Buat Pertama Kali</h2>
+      <div class="bg-[#f5f5f7] p-6 rounded-[1.5rem] mb-8 space-y-2 text-apple-text text-sm">
+        <p><span class="text-apple-gray mr-2">Tempat:</span> Dewan Belia</p>
+        <p><span class="text-apple-gray mr-2">Masa:</span> 3.00 Petang</p>
+        <p><span class="text-apple-gray mr-2">Kehadiran:</span> 22 orang</p>
+      </div>
 
-<p class="text-slate-600 leading-relaxed">
-Pertemuan pertama tahun 2026 yang menghimpunkan Adventist Youth,
-Adventurer dan Pathfinder bagi perancangan serta pengukuhan rohani.
-</p>
-
-<div class="bg-blue-50 p-6 rounded-xl space-y-1 text-slate-700">
-  <p>📅 <strong>Tarikh:</strong> 24 Januari 2026</p>
-  <p>📍 <strong>Tempat:</strong> Dewan Belia</p>
-  <p>⏰ <strong>Masa:</strong> 3.00 Petang</p>
-  <p>👥 <strong>Kehadiran:</strong> 22 orang</p>
-</div>
-
-<div>
-<h3 class="font-semibold text-lg">📝 Ulasan Kehadiran</h3>
-<p class="text-slate-600 leading-relaxed">
-Kehadiran amat memberangsangkan. Beberapa ibu bapa turut hadir
-bagi memberikan sokongan kepada anak-anak serta menyokong
-aktiviti AY yang dijalankan 🤝
-</p>
-</div>
-
-<div>
-<h3 class="font-semibold text-lg">🎯 Aktiviti</h3>
-<p class="text-slate-600 leading-relaxed">
-Para peserta telah dibahagikan kepada tiga kumpulan yang terdiri
-daripada Adventurer, Pathfinder, MIT dan MG. Aktiviti ini bertujuan
-untuk mengenal pasti minat para belia Gereja SDA Koporingan serta
-mengumpul cadangan aktiviti dan sasaran sepanjang tahun 2026 🌱
-</p>
-</div>
-
-</div>
-</div>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Ulasan Kehadiran</h3>
+          <p class="text-apple-gray leading-relaxed">
+            Kehadiran amat memberangsangkan. Beberapa ibu bapa turut hadir bagi memberikan sokongan kepada anak-anak serta menyokong aktiviti AY yang dijalankan.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Aktiviti</h3>
+          <p class="text-apple-gray leading-relaxed">
+            Para peserta telah dibahagikan kepada tiga kumpulan yang terdiri daripada Adventurer, Pathfinder, MIT dan MG. Aktiviti ini bertujuan untuk mengenal pasti minat para belia Gereja SDA Koporingan serta mengumpul cadangan aktiviti dan sasaran sepanjang tahun 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 07.02.2026 -->
 <section class="relative mb-32 fade-up">
-<div class="timeline-dot"></div>
-<div class="md:grid md:grid-cols-2 md:gap-16 items-start">
-<div class="bg-white p-10 rounded-3xl shadow-2xl space-y-6 order-2 md:order-1">
-<span class="text-blue-700 font-semibold text-sm tracking-wide">📅 07.02.2026</span>
-<h2 class="text-3xl font-bold">Induction Night – Adventurer, Pathfinder, MIT & MG</h2>
-<p class="text-slate-600 leading-relaxed">
-Majlis malam induksi komitmen pelayanan Tahun 2026.
-</p>
-</div>
-<div class="space-y-6 order-1 md:order-2">
-<img src="induction-1.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="induction-2.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="induction-3.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="induction-4.jpeg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-</div>
-</div>
+  <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+    
+    <div class="bg-apple-card p-10 md:p-12 rounded-[2.5rem] shadow-apple hover:shadow-apple-hover transition-shadow duration-300 order-2 md:order-1">
+      <p class="text-apple-blue font-semibold text-sm tracking-widest uppercase mb-3">07 Februari 2026</p>
+      <h2 class="text-3xl font-bold tracking-tight mb-5">Induction Night</h2>
+      <p class="text-apple-gray text-lg leading-relaxed">
+        Majlis malam induksi komitmen pelayanan Tahun 2026 bagi barisan Adventurer, Pathfinder, MIT & MG.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 order-1 md:order-2 mb-8 md:mb-0">
+      <img src="induction-1.jpeg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+      <img src="induction-2.jpeg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+      <img src="induction-3.jpeg" class="rounded-[1.5rem] shadow-apple aspect-[4/3] object-cover w-full col-span-2">
+      <img src="induction-4.jpeg" class="rounded-[1.5rem] shadow-apple aspect-[4/3] object-cover w-full col-span-2">
+    </div>
+
+  </div>
 </section>
 
-<!-- 08.02.2026 -->
 <section class="relative mb-32 fade-up">
-<div class="timeline-dot"></div>
-<div class="md:grid md:grid-cols-2 md:gap-16 items-start">
-<div class="space-y-6">
-<img src="MIT-1.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="MIT-2.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="MIT-3.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="MIT-4.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-</div>
-<div class="bg-white p-10 rounded-3xl shadow-2xl space-y-6">
-<span class="text-blue-700 font-semibold text-sm tracking-wide">📅 08.02.2026</span>
-<h2 class="text-3xl font-bold">Orientasi Kurikulum Master Guide in Training</h2>
-<p class="text-slate-600 leading-relaxed">
-Sesi orientasi dan persediaan kepimpinan MIT.
-</p>
-</div>
-</div>
+  <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+    
+    <div class="grid grid-cols-2 gap-4 mb-8 md:mb-0">
+      <img src="MIT-1.jpg" class="rounded-[1.5rem] shadow-apple aspect-[4/3] object-cover w-full col-span-2">
+      <img src="MIT-2.jpg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+      <div class="space-y-4">
+        <img src="MIT-3.jpg" class="rounded-[1rem] shadow-apple aspect-[4/3] object-cover w-full">
+        <img src="MIT-4.jpg" class="rounded-[1rem] shadow-apple aspect-[4/3] object-cover w-full">
+      </div>
+    </div>
+
+    <div class="bg-apple-card p-10 md:p-12 rounded-[2.5rem] shadow-apple hover:shadow-apple-hover transition-shadow duration-300">
+      <p class="text-apple-blue font-semibold text-sm tracking-widest uppercase mb-3">08 Februari 2026</p>
+      <h2 class="text-3xl font-bold tracking-tight mb-5">Orientasi Kurikulum MIT</h2>
+      <p class="text-apple-gray text-lg leading-relaxed">
+        Sesi orientasi dan persediaan kepimpinan Master Guide in Training (MIT).
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<!-- 15.02.2026 -->
 <section class="relative mb-32 fade-up text-center">
-<div class="timeline-dot"></div>
-<div class="bg-white p-12 rounded-3xl shadow-2xl max-w-xl mx-auto space-y-6">
-<span class="text-blue-700 font-semibold text-sm tracking-wide">📅 15.02.2026</span>
-<h2 class="text-3xl font-bold">Meeting Pertama Jabatan Belia Daerah Kapa</h2>
-<p class="text-slate-600 leading-relaxed">
-Perjumpaan penyelarasan hala tuju pelayanan belia.
-</p>
-</div>
+  <div class="bg-apple-card p-12 md:p-16 rounded-[3rem] shadow-apple hover:shadow-apple-hover transition-shadow duration-300 max-w-2xl mx-auto">
+    <p class="text-apple-blue font-semibold text-sm tracking-widest uppercase mb-3">15 Februari 2026</p>
+    <h2 class="text-3xl font-bold tracking-tight mb-5">Meeting Pertama Jabatan Belia Daerah Kapa</h2>
+    <p class="text-apple-gray text-lg leading-relaxed">
+      Perjumpaan penyelarasan hala tuju pelayanan belia di peringkat daerah.
+    </p>
+  </div>
 </section>
 
-<!-- 21.02.2026 -->
 <section class="relative mb-32 fade-up">
-<div class="timeline-dot"></div>
-<div class="md:grid md:grid-cols-2 md:gap-16 items-start">
+  <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+    
+    <div class="bg-apple-card p-10 md:p-12 rounded-[2.5rem] shadow-apple hover:shadow-apple-hover transition-shadow duration-300 order-2 md:order-1">
+      <p class="text-apple-blue font-semibold text-sm tracking-widest uppercase mb-3">21 Februari 2026</p>
+      <h2 class="text-3xl font-bold tracking-tight mb-5">Perjumpaan AY – Aktiviti Belia</h2>
+      
+      <p class="text-apple-gray text-lg leading-relaxed mb-8">
+        Perjumpaan Adventist Youth yang diisi dengan pelbagai aktiviti bagi memperkukuhkan kesatuan dan pertumbuhan rohani belia.
+      </p>
 
-<div class="bg-white p-10 rounded-3xl shadow-2xl space-y-6 order-2 md:order-1">
-<span class="text-blue-700 font-semibold text-sm tracking-wide">📅 21.02.2026</span>
-<h2 class="text-3xl font-bold">Perjumpaan AY – Aktiviti Belia</h2>
+      <div class="bg-[#f5f5f7] p-6 rounded-[1.5rem] mb-8 space-y-2 text-apple-text text-sm">
+        <p><span class="text-apple-gray mr-2">Tempat:</span> Dewan Belia</p>
+        <p><span class="text-apple-gray mr-2">Masa:</span> 3.00 Petang</p>
+        <p><span class="text-apple-gray mr-2">Kehadiran:</span> 30 orang</p>
+      </div>
 
-<p class="text-slate-600 leading-relaxed">
-Perjumpaan Adventist Youth yang diisi dengan pelbagai aktiviti
-bagi memperkukuhkan kesatuan dan pertumbuhan rohani belia.
-</p>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Ulasan Kehadiran</h3>
+          <p class="text-apple-gray leading-relaxed">
+            Kehadiran menunjukkan peningkatan dengan pertambahan ahli baharu serta sokongan berterusan daripada ibu bapa dan keluarga. Ucapan terima kasih juga dirakamkan kepada veteran MG Clifton dan MG Jossy yang turut hadir memberikan sokongan.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Aktiviti</h3>
+          <p class="text-apple-gray leading-relaxed">
+            Aktiviti Mengenal Karakter dalam Alkitab telah dijalankan. Ahli dibahagikan kepada dua kumpulan. Setiap kumpulan memilih dua orang wakil untuk meneka mesej tanpa menggunakan kata-kata, hanya melalui gerak isyarat dan lakonan.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Ulasan Akhir</h3>
+          <p class="text-apple-gray leading-relaxed">
+            Aktiviti berjaya menyampaikan mesej dan objektif pertemuan. Belia memahami bahawa perbuatan dan tindakan mencerminkan siapa diri kita, bukan hanya kata-kata.
+          </p>
+        </div>
+      </div>
+    </div>
 
-<div class="bg-blue-50 p-6 rounded-xl space-y-1 text-slate-700">
-  <p>📅 <strong>Tarikh:</strong> 21 Februari 2026</p>
-  <p>📍 <strong>Tempat:</strong> Dewan Belia</p>
-  <p>⏰ <strong>Masa:</strong> 3.00 Petang</p>
-  <p>👥 <strong>Kehadiran:</strong> 30 orang</p>
-</div>
+    <div class="grid grid-cols-2 gap-4 order-1 md:order-2 mb-8 md:mb-0">
+      <img src="AY-5.jpg" class="rounded-[1.5rem] shadow-apple aspect-[4/3] object-cover w-full col-span-2">
+      <img src="AY-6.jpg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+      <img src="AY-7.jpg" class="rounded-[1.5rem] shadow-apple aspect-square object-cover w-full">
+      <img src="AY-8.jpg" class="rounded-[1.5rem] shadow-apple aspect-[4/3] object-cover w-full col-span-2">
+      <img src="AY-9.jpg" class="rounded-[1.5rem] shadow-apple aspect-[4/3] object-cover w-full col-span-2">
+    </div>
 
-<div>
-<h3 class="font-semibold text-lg">📝 Ulasan Kehadiran</h3>
-<p class="text-slate-600 leading-relaxed">
-Kehadiran menunjukkan peningkatan dengan pertambahan ahli baharu
-serta sokongan berterusan daripada ibu bapa dan keluarga.
-Ucapan terima kasih juga dirakamkan kepada veteran MG Clifton
-dan MG Jossy yang turut hadir memberikan sokongan.
-</p>
-</div>
-
-<div>
-<h3 class="font-semibold text-lg">🎯 Aktiviti</h3>
-<p class="text-slate-600 leading-relaxed">
-Aktiviti Mengenal Karakter dalam Alkitab telah dijalankan.
-Ahli dibahagikan kepada dua kumpulan. Setiap kumpulan memilih
-dua orang wakil untuk meneka mesej tanpa menggunakan kata-kata,
-hanya melalui gerak isyarat dan lakonan.
-</p>
-</div>
-
-<div>
-<h3 class="font-semibold text-lg">💬 Ulasan</h3>
-<p class="text-slate-600 leading-relaxed">
-Aktiviti berjaya menyampaikan mesej dan objektif pertemuan.
-Belia memahami bahawa perbuatan dan tindakan mencerminkan
-siapa diri kita, bukan hanya kata-kata.
-</p>
-</div>
-
-</div>
-
-<div class="space-y-6 order-1 md:order-2">
-<img src="AY-5.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AY-6.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AY-7.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AY-8.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AY-9.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-</div>
-
-</div>
+  </div>
 </section>
 
-<!-- 22.02.2026 -->
 <section class="relative mb-32 fade-up">
-<div class="timeline-dot"></div>
-<div class="md:grid md:grid-cols-2 md:gap-16 items-start">
-<div class="bg-white p-10 rounded-3xl shadow-2xl space-y-6 order-2 md:order-1">
-<span class="text-blue-700 font-semibold text-sm tracking-wide">📅 22.02.2026</span>
-<h2 class="text-3xl font-bold">Perjumpaan Adventurer & Pathfinder – Progressive Class</h2>
-<p class="text-slate-600 leading-relaxed">
-Pengenalan lagu, ikrar dan progressive class.
-</p>
-</div>
-<div class="grid grid-cols-2 gap-6 order-1 md:order-2">
-<img src="AD-1.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-2.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-3.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-4.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-5.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-6.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-7.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-<img src="AD-8.jpg" class="rounded-3xl shadow-xl aspect-[4/3] object-cover">
-</div>
-</div>
+  <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+    
+    <div class="bg-apple-card p-10 md:p-12 rounded-[2.5rem] shadow-apple hover:shadow-apple-hover transition-shadow duration-300 order-2 md:order-1">
+      <p class="text-apple-blue font-semibold text-sm tracking-widest uppercase mb-3">22 Februari 2026</p>
+      <h2 class="text-3xl font-bold tracking-tight mb-5">Progressive Class</h2>
+      <p class="text-apple-gray text-lg leading-relaxed">
+        Perjumpaan Adventurer & Pathfinder merangkumi pengenalan lagu, ikrar dan kelas berperingkat (progressive class).
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 order-1 md:order-2 mb-8 md:mb-0">
+      <img src="AD-1.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full">
+      <img src="AD-2.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full">
+      <img src="AD-3.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full">
+      <img src="AD-4.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full">
+      <img src="AD-5.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full">
+      <img src="AD-6.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full">
+      <img src="AD-7.jpg" class="rounded-2xl shadow-apple aspect-square object-cover w-full md:col-span-1 col-span-2">
+      <img src="AD-8.jpg" class="rounded-2xl shadow-apple aspect-[4/3] object-cover w-full md:col-span-2 col-span-2">
+    </div>
+
+  </div>
 </section>
 
 </main>
 
 <script>
-/* Loader */
-window.addEventListener("load",()=>{
-  setTimeout(()=>{
-    document.getElementById("loader").style.display="none";
-  },1200);
+/* Loader Script */
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  setTimeout(() => {
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500);
+  }, 800);
 });
 
-/* Scroll animation */
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
+/* Scroll animation Script */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
   });
-});
-document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
+}, { threshold: 0.1 }); // triggers slightly earlier for a smoother feel
+
+document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+/* Audio Autoplay Script on Scroll/Interaction */
+let audioPlayed = false;
+const bgMusic = document.getElementById('bg-music');
+const playAudio = () => {
+  if (!audioPlayed) {
+    bgMusic.play().then(() => {
+      audioPlayed = true;
+      // Once playing starts, remove the event listeners so it doesn't try to play again
+      window.removeEventListener('scroll', playAudio);
+      window.removeEventListener('click', playAudio);
+      window.removeEventListener('touchstart', playAudio);
+    }).catch(err => {
+      // Browser blocked autoplay due to missing user interaction. 
+      // It will try again on the next scroll or click.
+      console.log("Waiting for more user interaction to play audio...");
+    });
+  }
+};
+
+// Attempt to play on scroll, click, or tap
+window.addEventListener('scroll', playAudio, { passive: true });
+window.addEventListener('click', playAudio);
+window.addEventListener('touchstart', playAudio, { passive: true });
+
 </script>
 
 </body>

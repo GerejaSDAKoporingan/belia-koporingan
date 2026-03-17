@@ -14,13 +14,7 @@
       extend: {
         fontFamily: { sans: ['Inter', 'sans-serif'] },
         colors: {
-          apple: {
-            text: '#1d1d1f',
-            gray: '#86868b',
-            blue: '#0066cc',
-            bg: '#fbfbfd',
-            card: '#ffffff'
-          }
+          apple: { text: '#1d1d1f', gray: '#86868b', blue: '#0066cc', bg: '#fbfbfd', card: '#ffffff' }
         }
       }
     }
@@ -28,14 +22,9 @@
 </script>
 
 <style>
-  body { 
-    background-color: #fbfbfd; 
-    color: #1d1d1f; 
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
-  }
+  body { background-color: #fbfbfd; color: #1d1d1f; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 
-  /* Glassmorphism Nav */
+  /* UNIVERSAL NAVIGATION STYLES */
   nav {
     position: fixed;
     top: 0;
@@ -45,59 +34,54 @@
     backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
   }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-  /* Timeline Vertical Line */
+  /* Spacing for Timeline Header */
+  .header-spacing { padding-top: 130px; }
+  @media (min-width: 768px) { .header-spacing { padding-top: 100px; } }
+
   .timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: #e5e5ea;
-    z-index: 0;
+    content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 100%; background: #e5e5ea; z-index: 0;
   }
+  @media(max-width: 768px) { .timeline-container::before { left: 20px; } }
 
-  /* Event Cards */
   .event-card {
-    background: #ffffff;
-    border-radius: 35px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.02);
-    transition: transform 0.4s ease;
+    background: #ffffff; border-radius: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02); transition: transform 0.4s ease;
   }
-
-  @media(max-width: 768px) {
-    .timeline-container::before { left: 20px; }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
-    <div class="hidden md:flex space-x-8 text-sm font-medium text-apple-gray">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="h-16 flex items-center justify-between">
+      <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
+      <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all shadow-md">
+        Join Us
+      </a>
+    </div>
+
+    <div class="md:hidden flex space-x-6 overflow-x-auto no-scrollbar pb-3 text-sm font-semibold text-apple-gray">
+      <a href="index.html" class="whitespace-nowrap">Home</a>
+      <a href="timeline.html" class="text-apple-text whitespace-nowrap border-b-2 border-apple-blue">Timeline Aktiviti</a>
+      <a href="contact.html" class="whitespace-nowrap">Contact Us</a>
+    </div>
+
+    <div class="hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 h-16 items-center space-x-8 text-sm font-medium text-apple-gray">
       <a href="index.html" class="hover:text-apple-blue transition-colors">Home</a>
-      <a href="timeline.html" class="text-apple-text">Timeline Aktiviti</a>
+      <a href="timeline.html" class="text-apple-text border-b-2 border-apple-blue transition-colors">Timeline Aktiviti</a>
       <a href="contact.html" class="hover:text-apple-blue transition-colors">Contact Us</a>
     </div>
-    <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700">Join Us</a>
   </div>
 </nav>
 
-<header class="pt-40 pb-20 text-center px-4">
+<header class="header-spacing pb-20 text-center px-4">
   <span class="text-apple-blue font-bold tracking-widest uppercase text-xs">Arsip Pelayanan</span>
   <h1 class="text-5xl font-bold tracking-tight mt-2">Jejak Belia 2026</h1>
 </header>
@@ -107,16 +91,9 @@
   <div class="relative mb-24 reveal">
     <div class="md:w-1/2 md:pr-12 md:ml-0 ml-8">
       <div class="event-card p-8">
-        <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2 text-center md:text-left">24 Jan 2026</p>
+        <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">24 Jan 2026</p>
         <h2 class="text-2xl font-bold mb-4">Perjumpaan Pertama AY, Adventurer & Pathfinder</h2>
         <p class="text-apple-gray text-sm leading-relaxed mb-6">Pertemuan pembukaan tahun 2026 untuk perancangan aktiviti dan pengukuhan rohani bersama ahli dan ibu bapa.</p>
-        
-        <div class="bg-apple-light p-5 rounded-2xl text-xs space-y-2 mb-6">
-          <p>📍 <strong>Tempat:</strong> Dewan Belia</p>
-          <p>👥 <strong>Kehadiran:</strong> 22 Orang</p>
-          <p>📝 <strong>Aktiviti:</strong> Pembahagian kumpulan & pengumpulan cadangan aktiviti 2026.</p>
-        </div>
-
         <div class="grid grid-cols-2 gap-3">
           <img src="ay-2401-1.jpeg" class="rounded-2xl w-full aspect-square object-cover col-span-2">
           <img src="ay-2401-2.jpeg" class="rounded-xl w-full aspect-square object-cover">
@@ -132,7 +109,6 @@
         <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">07 Feb 2026</p>
         <h2 class="text-2xl font-bold mb-4">Induction Night</h2>
         <p class="text-apple-gray text-sm leading-relaxed mb-6">Majlis rasmi malam induksi bagi menandakan komitmen pelayanan ahli-ahli belia untuk tahun 2026.</p>
-        
         <div class="grid grid-cols-3 gap-2">
           <img src="induction-1.jpeg" class="rounded-xl w-full aspect-[3/4] object-cover">
           <img src="induction-2.jpeg" class="rounded-xl w-full aspect-[3/4] object-cover">
@@ -147,8 +123,7 @@
       <div class="event-card p-8">
         <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">08 Feb 2026</p>
         <h2 class="text-2xl font-bold mb-4">Orientasi Kurikulum MIT</h2>
-        <p class="text-apple-gray text-sm leading-relaxed mb-6">Sesi orientasi khusus untuk persediaan kepimpinan dan taklimat kurikulum bagi calon Master Guide in Training.</p>
-        
+        <p class="text-apple-gray text-sm leading-relaxed mb-6">Sesi orientasi khusus bagi calon Master Guide in Training.</p>
         <div class="grid grid-cols-2 gap-3">
           <img src="MIT-0802-1.jpg" class="rounded-2xl w-full aspect-video object-cover">
           <img src="MIT-0802-2.jpg" class="rounded-2xl w-full aspect-video object-cover">
@@ -159,10 +134,9 @@
 
   <div class="relative mb-24 reveal">
     <div class="md:w-1/2 md:pl-12 md:ml-auto ml-8">
-      <div class="event-card p-8 bg-apple-light border-dashed border-2 border-gray-200 shadow-none">
+      <div class="event-card p-8 bg-apple-light border-dashed border-2 border-gray-200 shadow-none text-center">
         <p class="text-apple-gray font-bold text-xs tracking-widest uppercase mb-2">15 Feb 2026</p>
-        <h2 class="text-xl font-bold mb-2">Meeting Jabatan Belia Daerah Kapa</h2>
-        <p class="text-apple-gray text-sm italic">Penyelarasan program dan hala tuju pelayanan peringkat daerah.</p>
+        <h2 class="text-xl font-bold">Meeting Jabatan Belia Daerah Kapa</h2>
       </div>
     </div>
   </div>
@@ -172,9 +146,7 @@
       <div class="event-card p-8">
         <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">21 Feb 2026</p>
         <h2 class="text-2xl font-bold mb-4">Aktiviti Karakter Alkitab</h2>
-        <p class="text-apple-gray text-sm leading-relaxed mb-4">Mengenal identiti rohani melalui lakonan dan teka mesej tanpa suara.</p>
-        <p class="text-apple-gray text-xs mb-6 font-medium italic">"Tindakan kita lebih kuat berbicara daripada kata-kata."</p>
-        
+        <p class="text-apple-gray text-sm leading-relaxed mb-6">Mengenal identiti rohani melalui lakonan dan teka mesej tanpa suara.</p>
         <div class="grid grid-cols-3 gap-2">
           <img src="ay-2102-1.jpg" class="rounded-xl w-full aspect-square object-cover">
           <img src="ay-2102-2.jpg" class="rounded-xl w-full aspect-square object-cover">
@@ -189,8 +161,6 @@
       <div class="event-card p-8">
         <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">22 Feb 2026</p>
         <h2 class="text-2xl font-bold mb-4">Progressive Class AD & PF</h2>
-        <p class="text-apple-gray text-sm leading-relaxed mb-6">Sesi pembelajaran rasmi merangkumi lagu tema, ikrar, dan kelas kemajuan.</p>
-        
         <div class="grid grid-cols-2 gap-2">
           <img src="adpf-2202-1.jpg" class="rounded-xl w-full aspect-square object-cover">
           <img src="adpf-2202-2.jpg" class="rounded-xl w-full aspect-square object-cover">
@@ -206,8 +176,7 @@
       <div class="event-card p-8 ring-2 ring-apple-blue/10">
         <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">14 Mac 2026</p>
         <h2 class="text-2xl font-bold mb-4">Global Children & Youth Day</h2>
-        <p class="text-apple-gray text-sm leading-relaxed mb-6">Program ziarah doa dan kasih serta aktiviti kraf kreativiti di Kg. Koporingan, Tamparuli.</p>
-        
+        <p class="text-apple-gray text-sm leading-relaxed mb-6">Program ziarah doa dan kasih serta aktiviti kraf kreativiti di Kg. Koporingan.</p>
         <div class="grid grid-cols-2 gap-2">
           <img src="gyd-1403-1.jpg" class="rounded-2xl w-full aspect-video object-cover col-span-2">
           <img src="gyd-1403-2.jpg" class="rounded-xl w-full aspect-square object-cover">
@@ -226,12 +195,9 @@
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('show'); }
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 

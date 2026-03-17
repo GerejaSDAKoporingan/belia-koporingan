@@ -14,12 +14,7 @@
       extend: {
         fontFamily: { sans: ['Inter', 'sans-serif'] },
         colors: {
-          apple: {
-            text: '#1d1d1f',
-            gray: '#86868b',
-            blue: '#0066cc',
-            light: '#f5f5f7'
-          }
+          apple: { text: '#1d1d1f', gray: '#86868b', blue: '#0066cc', light: '#f5f5f7' }
         }
       }
     }
@@ -27,12 +22,7 @@
 </script>
 
 <style>
-  body { 
-    background-color: #ffffff; 
-    color: #1d1d1f; 
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
-  }
+  body { background-color: #ffffff; color: #1d1d1f; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 
   /* Glassmorphism Nav */
   nav {
@@ -45,78 +35,56 @@
     border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
-  /* Apple-style rounded Hero */
-  .hero-container {
-    padding-top: 80px;
-  }
+  /* Hide scrollbar for mobile menu */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .hero-container { padding-top: 110px; } /* Added more space for double-row mobile nav */
+  @media (min-width: 768px) { .hero-container { padding-top: 80px; } }
+
   .hero-image {
-    /* Filename corrected to match your GitHub capitalization */
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Index-wallpaper.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 40px;
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-size: cover; background-position: center; border-radius: 40px; height: 70vh;
+    display: flex; align-items: center; justify-content: center; text-align: center;
   }
 
-  /* Bento Grid Shadows */
-  .bento-card {
-    background: #ffffff;
-    border-radius: 30px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0,0,0,0.03);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-  }
-  .bento-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  }
+  .bento-card { background: #ffffff; border-radius: 30px; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.4s ease; }
+  .bento-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
 
-  .club-logo {
-    height: 64px;
-    width: auto;
-    margin: 0 auto 1.2rem;
-    object-fit: contain;
-  }
-
-  /* Reveal Animation */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-  }
-  .reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
-    
-    <div class="hidden md:flex space-x-8 text-sm font-medium text-apple-gray">
-      <a href="index.html" class="text-apple-text">Home</a>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="h-16 flex items-center justify-between">
+      <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
+      <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all shadow-md">
+        Join Us
+      </a>
+    </div>
+
+    <div class="md:hidden flex space-x-6 overflow-x-auto no-scrollbar pb-3 text-sm font-semibold text-apple-gray">
+      <a href="index.html" class="text-apple-text whitespace-nowrap">Home</a>
+      <a href="timeline.html" class="whitespace-nowrap">Timeline Aktiviti</a>
+      <a href="contact.html" class="whitespace-nowrap">Contact Us</a>
+    </div>
+
+    <div class="hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 h-16 items-center space-x-8 text-sm font-medium text-apple-gray">
+      <a href="index.html" class="text-apple-text hover:text-apple-blue transition-colors">Home</a>
       <a href="timeline.html" class="hover:text-apple-blue transition-colors">Timeline Aktiviti</a>
       <a href="contact.html" class="hover:text-apple-blue transition-colors">Contact Us</a>
     </div>
-
-    <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all">
-      Join Us
-    </a>
   </div>
 </nav>
 
 <main class="max-w-7xl mx-auto px-4 md:px-6">
 
   <section class="hero-container reveal">
-    <div class="hero-image shadow-2xl">
+    <div class="hero-image">
       <div class="px-4">
         <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
           Bertumbuh dalam Hikmat dan Kasih
@@ -132,86 +100,32 @@
   </section>
 
   <section class="py-24">
-    <div class="text-center mb-16 reveal">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Kekuatan Pelayanan Kami</h2>
-      <div class="w-12 h-1 bg-apple-blue mx-auto mt-4 rounded-full"></div>
-    </div>
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
-      
       <div class="bento-card p-10 text-center">
-        <img src="MG.png" alt="Master Guide" class="club-logo">
+        <img src="MG.png" class="h-16 mx-auto mb-4 object-contain">
         <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Master Guide</h3>
-        <p class="text-3xl font-bold mt-2">3 <span class="text-lg font-medium text-apple-gray">Ahli</span></p>
+        <p class="text-3xl font-bold mt-2">3 <span class="text-lg font-medium">Ahli</span></p>
       </div>
-
       <div class="bento-card p-10 text-center">
-        <img src="Pathfinder.png" alt="Pathfinder" class="club-logo">
+        <img src="Pathfinder.png" class="h-16 mx-auto mb-4 object-contain">
         <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Pathfinder</h3>
-        <p class="text-3xl font-bold mt-2">10 <span class="text-lg font-medium text-apple-gray">Ahli</span></p>
+        <p class="text-3xl font-bold mt-2">10 <span class="text-lg font-medium">Ahli</span></p>
       </div>
-
       <div class="bento-card p-10 text-center">
-        <img src="Adventurer.webp" alt="Adventurer" class="club-logo">
+        <img src="Adventurer.webp" class="h-16 mx-auto mb-4 object-contain">
         <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Adventurer</h3>
-        <p class="text-3xl font-bold mt-2">7 <span class="text-lg font-medium text-apple-gray">Ahli</span></p>
+        <p class="text-3xl font-bold mt-2">7 <span class="text-lg font-medium">Ahli</span></p>
       </div>
-
-    </div>
-  </section>
-
-  <section class="pb-32 reveal">
-    <div class="flex justify-between items-end mb-12">
-        <div>
-            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sorotan Aktiviti</h2>
-            <p class="text-apple-gray mt-2 text-lg">Momen-momen bermakna dalam pelayanan kami.</p>
-        </div>
-        <a href="timeline.html" class="bg-apple-light text-apple-blue px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-all">
-          Lihat Semua →
-        </a>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-10">
-        
-        <div class="group cursor-pointer" onclick="window.location.href='timeline.html'">
-            <div class="overflow-hidden rounded-[40px] mb-6 shadow-lg">
-                <img src="gyd-1403-1.jpg" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-            <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">14 Mac 2026</p>
-            <h3 class="text-2xl font-bold group-hover:text-apple-blue transition-colors">Global Children & Youth Day</h3>
-            <p class="text-apple-gray text-sm mt-2 leading-relaxed">Program ziarah doa dan kasih di Kg. Koporingan, Tamparuli.</p>
-        </div>
-
-        <div class="group cursor-pointer" onclick="window.location.href='timeline.html'">
-            <div class="overflow-hidden rounded-[40px] mb-6 shadow-lg">
-                <img src="ay-2102-1.jpg" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-            <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">21 Feb 2026</p>
-            <h3 class="text-2xl font-bold group-hover:text-apple-blue transition-colors">Aktiviti Karakter Alkitab</h3>
-            <p class="text-apple-gray text-sm mt-2 leading-relaxed">Belajar mengenai identiti rohani melalui aktiviti interaktif.</p>
-        </div>
-
-        <div class="group cursor-pointer" onclick="window.location.href='timeline.html'">
-            <div class="overflow-hidden rounded-[40px] mb-6 shadow-lg">
-                <img src="induction-1.jpeg" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700">
-            </div>
-            <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">07 Feb 2026</p>
-            <h3 class="text-2xl font-bold group-hover:text-apple-blue transition-colors">Induction Night</h3>
-            <p class="text-apple-gray text-sm mt-2 leading-relaxed">Malam komitmen bagi barisan pemimpin dan ahli belia 2026.</p>
-        </div>
-
     </div>
   </section>
 
 </main>
 
-<footer class="bg-apple-light py-16 text-center border-t border-gray-100">
-    <div class="mb-4 font-bold">Jabatan Belia Gereja SDA Koporingan</div>
-    <p class="text-apple-gray text-sm">© 2026 Jabatan Belia Gereja SDA Koporingan. <br>Designed and maintain by Erlandson Keith Subin.</p>
+<footer class="bg-apple-light py-16 text-center">
+    <p class="text-apple-gray text-sm">© 2026 Jabatan Belia Gereja SDA Koporingan</p>
 </footer>
 
 <script>
-  // Reveal animation on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -219,7 +133,6 @@
       }
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 

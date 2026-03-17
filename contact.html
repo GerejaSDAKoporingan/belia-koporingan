@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hubungi Kami | Belia SDA Koporingan</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          apple: {
+            text: '#1d1d1f',
+            gray: '#86868b',
+            blue: '#0066cc',
+            bg: '#fbfbfd',
+            card: '#ffffff'
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  body { 
+    background-color: #ffffff; 
+    color: #1d1d1f; 
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .contact-card {
+    background: #f5f5f7;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover {
+    background: #ebebed;
+    transform: scale(1.02);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-apple-gray">
+      <a href="index.html" class="hover:text-apple-blue transition-colors">Home</a>
+      <a href="timeline.html" class="hover:text-apple-blue transition-colors">Timeline Aktiviti</a>
+      <a href="contact.html" class="text-apple-text">Contact Us</a>
+    </div>
+    <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700">Join Us</a>
+  </div>
+</nav>
+
+<main class="max-w-5xl mx-auto px-6 pt-40 pb-32">
+  
+  <header class="text-center mb-20 reveal">
+    <h1 class="text-5xl font-bold tracking-tight mb-4">Hubungi Kami</h1>
+    <p class="text-apple-gray text-xl">Kami sedia mendengar dan melayani anda.</p>
+  </header>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-20 reveal">
+    
+    <a href="https://wa.me/yourphonenumber" target="_blank" class="contact-card p-10 text-center">
+      <div class="text-4xl mb-4">💬</div>
+      <h3 class="font-bold text-lg">WhatsApp</h3>
+      <p class="text-apple-gray text-sm mt-1">Sembang terus dengan kami.</p>
+    </a>
+
+    <a href="mailto:yourchurch@email.com" class="contact-card p-10 text-center">
+      <div class="text-4xl mb-4">✉️</div>
+      <h3 class="font-bold text-lg">Email</h3>
+      <p class="text-apple-gray text-sm mt-1">Hantar pertanyaan rasmi.</p>
+    </a>
+
+    <a href="https://maps.google.com" target="_blank" class="contact-card p-10 text-center">
+      <div class="text-4xl mb-4">📍</div>
+      <h3 class="font-bold text-lg">Lokasi</h3>
+      <p class="text-apple-gray text-sm mt-1">Gereja SDA Koporingan, Tamparuli.</p>
+    </a>
+
+  </div>
+
+  <section class="reveal">
+    <h2 class="text-2xl font-bold mb-10 text-center">Kepimpinan Gereja</h2>
+    <div class="max-w-2xl mx-auto space-y-4">
+      
+      <div class="flex items-center justify-between p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+        <div>
+          <h4 class="font-bold">Nama Elder 1</h4>
+          <p class="text-apple-gray text-xs uppercase tracking-widest">Ketua Penatua</p>
+        </div>
+        <a href="tel:+" class="text-apple-blue font-medium text-sm hover:underline">Hubungi</a>
+      </div>
+
+      <div class="flex items-center justify-between p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
+        <div>
+          <h4 class="font-bold">Nama Elder 2</h4>
+          <p class="text-apple-gray text-xs uppercase tracking-widest">Penatua Belia</p>
+        </div>
+        <a href="tel:+" class="text-apple-blue font-medium text-sm hover:underline">Hubungi</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-apple-light py-12 text-center border-t border-gray-100">
+    <p class="text-apple-gray text-sm">© 2026 Jabatan Belia Gereja SDA Koporingan</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

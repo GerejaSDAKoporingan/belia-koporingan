@@ -14,13 +14,7 @@
       extend: {
         fontFamily: { sans: ['Inter', 'sans-serif'] },
         colors: {
-          apple: {
-            text: '#1d1d1f',
-            gray: '#86868b',
-            blue: '#0066cc',
-            bg: '#fbfbfd',
-            card: '#ffffff'
-          }
+          apple: { text: '#1d1d1f', gray: '#86868b', blue: '#0066cc', bg: '#fbfbfd', card: '#ffffff' }
         }
       }
     }
@@ -28,12 +22,9 @@
 </script>
 
 <style>
-  body { 
-    background-color: #ffffff; 
-    color: #1d1d1f; 
-    -webkit-font-smoothing: antialiased;
-  }
+  body { background-color: #ffffff; color: #1d1d1f; -webkit-font-smoothing: antialiased; }
 
+  /* UNIVERSAL NAVIGATION STYLES */
   nav {
     position: fixed;
     top: 0;
@@ -43,62 +34,71 @@
     backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
   }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Spacing for Header */
+  .header-spacing { padding-top: 140px; }
+  @media (min-width: 768px) { .header-spacing { padding-top: 110px; } }
 
   .contact-card {
     background: #f5f5f7;
     border-radius: 30px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-
   .contact-card:hover {
     background: #ebebed;
     transform: scale(1.02);
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-  }
-  .reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
-    <div class="hidden md:flex space-x-8 text-sm font-medium text-apple-gray">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="h-16 flex items-center justify-between">
+      <div class="text-lg font-bold tracking-tight">Belia SDA Koporingan</div>
+      <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all shadow-md">
+        Join Us
+      </a>
+    </div>
+
+    <div class="md:hidden flex space-x-6 overflow-x-auto no-scrollbar pb-3 text-sm font-semibold text-apple-gray">
+      <a href="index.html" class="whitespace-nowrap">Home</a>
+      <a href="timeline.html" class="whitespace-nowrap">Timeline Aktiviti</a>
+      <a href="contact.html" class="text-apple-text whitespace-nowrap border-b-2 border-apple-blue">Contact Us</a>
+    </div>
+
+    <div class="hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 h-16 items-center space-x-8 text-sm font-medium text-apple-gray">
       <a href="index.html" class="hover:text-apple-blue transition-colors">Home</a>
       <a href="timeline.html" class="hover:text-apple-blue transition-colors">Timeline Aktiviti</a>
-      <a href="contact.html" class="text-apple-text">Contact Us</a>
+      <a href="contact.html" class="text-apple-text border-b-2 border-apple-blue transition-colors">Contact Us</a>
     </div>
-    <a href="#" class="bg-apple-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all">Join Us</a>
   </div>
 </nav>
 
-<main class="max-w-5xl mx-auto px-6 pt-40 pb-32">
+<main class="max-w-5xl mx-auto px-6 header-spacing pb-32">
   
   <header class="text-center mb-16 reveal">
     <span class="text-apple-blue font-bold tracking-widest uppercase text-xs">Hubungi Kami</span>
     <h1 class="text-5xl font-bold tracking-tight mt-3 mb-4">Mari Berhubung</h1>
-    <p class="text-apple-gray text-xl max-w-2xl mx-auto">Kami sedia membantu menjawab sebarang pertanyaan mengenai aktiviti belia dan pelayanan kami.</p>
+    <p class="text-apple-gray text-xl max-w-2xl mx-auto">Sedia melayani sebarang pertanyaan mengenai aktiviti belia kami.</p>
   </header>
 
   <div class="grid md:grid-cols-2 gap-8 mb-24 reveal">
     
-    <a href="https://wa.me/60146542033" target="_blank" class="contact-card p-12 text-center shadow-sm">
+    <a href="https://wa.me/60165850504" target="_blank" class="contact-card p-12 text-center shadow-sm">
       <div class="text-5xl mb-6">💬</div>
       <h3 class="font-bold text-xl">WhatsApp Kami</h3>
-      <p class="text-apple-gray mt-2 leading-relaxed">Hubungi kami secara terus untuk pertanyaan pantas mengenai aktiviti AY & MIT.</p>
+      <p class="text-apple-gray mt-2 leading-relaxed">Hubungi Ketua Unit AY / MIT untuk maklumat pantas.</p>
       <span class="inline-block mt-6 text-apple-blue font-semibold">Mula Berbual →</span>
     </a>
 
-    <a href="https://www.google.com/maps/search/Gereja+SDA+Koporingan+Tamparuli" target="_blank" class="contact-card p-12 text-center shadow-sm">
+    <a href="https://www.google.com/maps/search/SDA+Koporingan+Tamparuli" target="_blank" class="contact-card p-12 text-center shadow-sm">
       <div class="text-5xl mb-6">📍</div>
       <h3 class="font-bold text-xl">Lokasi Gereja</h3>
       <p class="text-apple-gray mt-2 leading-relaxed">SDA Koporingan, Tamparuli, Sabah.<br>Klik untuk panduan arah jalan.</p>
@@ -121,7 +121,7 @@
           <p class="text-apple-gray text-xs uppercase tracking-widest mt-1">Ketua Jabatan Belia (2026 - 2027)</p>
         </div>
         <a href="tel:0146542033" class="bg-apple-light text-apple-blue px-6 py-2 rounded-full font-bold text-sm hover:bg-apple-blue hover:text-white transition-all">
-          Hubungi: 014-654 2033
+          014-654 2033
         </a>
       </div>
 
@@ -131,7 +131,7 @@
           <p class="text-apple-gray text-xs uppercase tracking-widest mt-1">Jabatan Belia SDA Koporingan</p>
         </div>
         <a href="tel:0165850504" class="bg-apple-light text-apple-blue px-6 py-2 rounded-full font-bold text-sm hover:bg-apple-blue hover:text-white transition-all">
-          Hubungi: 016-585 0504
+          016-585 0504
         </a>
       </div>
 
@@ -141,19 +141,15 @@
 </main>
 
 <footer class="bg-apple-light py-16 text-center">
-    <div class="font-bold mb-2">Belia SDA Koporingan</div>
-    <p class="text-apple-gray text-sm">Gereja Seventh-day Adventist Koporingan, Tamparuli.</p>
+    <p class="text-apple-gray text-sm">© 2026 Jabatan Belia Gereja SDA Koporingan</p>
 </footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('show'); }
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 

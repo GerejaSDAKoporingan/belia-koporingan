@@ -47,10 +47,9 @@
 
   /* Apple-style rounded Hero */
   .hero-container {
-    padding-top: 80px; /* Space for nav */
+    padding-top: 80px;
   }
   .hero-image {
-    /* CORRECTED FILENAME CASE SENSITIVITY FOR GITHUB */
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Index-wallpaper.png');
     background-size: cover;
     background-position: center;
@@ -73,6 +72,14 @@
   .bento-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* Logo Styling */
+  .club-logo {
+    height: 64px;
+    width: auto;
+    margin: 0 auto 1rem;
+    object-fit: contain;
   }
 
   /* Smooth fade in */
@@ -128,29 +135,23 @@
       <p class="text-apple-gray mt-2">Membentuk pemimpin masa depan hari ini.</p>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
       
-      <div class="bento-card p-8 text-center">
-        <div class="text-4xl mb-4">🧭</div>
-        <h3 class="text-apple-gray text-sm font-semibold uppercase tracking-widest">Master Guide</h3>
+      <div class="bento-card p-10 text-center">
+        <img src="MG.png" alt="Master Guide Logo" class="club-logo">
+        <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Master Guide</h3>
         <p class="text-3xl font-bold mt-2">3 <span class="text-lg font-medium">Orang</span></p>
       </div>
 
-      <div class="bento-card p-8 text-center">
-        <div class="text-4xl mb-4">🛡️</div>
-        <h3 class="text-apple-gray text-sm font-semibold uppercase tracking-widest">MIT</h3>
-        <p class="text-3xl font-bold mt-2">18 <span class="text-lg font-medium">Orang</span></p>
-      </div>
-
-      <div class="bento-card p-8 text-center">
-        <div class="text-4xl mb-4">🚩</div>
-        <h3 class="text-apple-gray text-sm font-semibold uppercase tracking-widest">Pathfinder</h3>
+      <div class="bento-card p-10 text-center">
+        <img src="Pathfinder.png" alt="Pathfinder Logo" class="club-logo">
+        <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Pathfinder</h3>
         <p class="text-3xl font-bold mt-2">10 <span class="text-lg font-medium">Orang</span></p>
       </div>
 
-      <div class="bento-card p-8 text-center">
-        <div class="text-4xl mb-4">⭐</div>
-        <h3 class="text-apple-gray text-sm font-semibold uppercase tracking-widest">Adventurer</h3>
+      <div class="bento-card p-10 text-center">
+        <img src="Adventurer.webp" alt="Adventurer Logo" class="club-logo">
+        <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Adventurer</h3>
         <p class="text-3xl font-bold mt-2">7 <span class="text-lg font-medium">Orang</span></p>
       </div>
 
@@ -200,7 +201,6 @@
 </footer>
 
 <script>
-  // Simple Reveal Animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

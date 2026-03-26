@@ -22,7 +22,14 @@
 </script>
 
 <style>
-  body { background-color: #ffffff; color: #1d1d1f; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+  body { 
+    background-color: #ffffff; 
+    color: #1d1d1f; 
+    -webkit-font-smoothing: antialiased; 
+    scroll-behavior: smooth; 
+    margin: 0;
+    padding: 0;
+  }
 
   /* Glassmorphism Nav */
   nav {
@@ -39,17 +46,51 @@
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-  .hero-container { padding-top: 110px; } /* Added more space for double-row mobile nav */
-  @media (min-width: 768px) { .hero-container { padding-top: 80px; } }
-
-  .hero-image {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Index-wallpaper.png');
-    background-size: cover; background-position: center; border-radius: 40px; height: 70vh;
-    display: flex; align-items: center; justify-content: center; text-align: center;
+  /* FULL SCREEN HERO - This removes the "frame" look */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
   }
 
-  .bento-card { background: #ffffff; border-radius: 30px; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.4s ease; }
-  .bento-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+  .hero-image {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Index-wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Container for content below the hero */
+  .content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .bento-card { 
+    background: #ffffff; 
+    border-radius: 30px; 
+    border: 1px solid rgba(0,0,0,0.03); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04); 
+    transition: all 0.4s ease; 
+  }
+  .bento-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+  }
+
+  .club-logo {
+    height: 64px;
+    width: auto;
+    margin: 0 auto 1.2rem;
+    object-fit: contain;
+  }
 
   .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
   .reveal.show { opacity: 1; transform: translateY(0); }
@@ -81,16 +122,15 @@
   </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 md:px-6">
-
-  <section class="hero-container reveal">
+<main>
+  <section class="hero-section reveal">
     <div class="hero-image">
       <div class="px-4">
-        <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
+        <h1 class="text-4xl md:text-7xl font-bold text-white tracking-tight mb-4">
           Bertumbuh dalam Hikmat dan Kasih
         </h1>
-        <p class="text-white/90 text-lg md:text-xl font-light">Gereja SDA Koporingan – Jabatan Belia</p>
-        <div class="mt-8 flex justify-center">
+        <p class="text-white/90 text-lg md:text-2xl font-light">Gereja SDA Koporingan – Jabatan Belia</p>
+        <div class="mt-10 flex justify-center">
             <a href="timeline.html" class="bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all shadow-lg">
               Explore Timeline
             </a>
@@ -99,33 +139,89 @@
     </div>
   </section>
 
-  <section class="py-24">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
-      <div class="bento-card p-10 text-center">
-        <img src="MG.png" class="h-16 mx-auto mb-4 object-contain">
-        <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Master Guide</h3>
-        <p class="text-3xl font-bold mt-2">3 <span class="text-lg font-medium">Ahli</span></p>
+  <div class="content-container">
+    
+    <section class="py-24">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Kekuatan Pelayanan Kami</h2>
+        <div class="w-12 h-1 bg-apple-blue mx-auto mt-4 rounded-full"></div>
       </div>
-      <div class="bento-card p-10 text-center">
-        <img src="Pathfinder.png" class="h-16 mx-auto mb-4 object-contain">
-        <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Pathfinder</h3>
-        <p class="text-3xl font-bold mt-2">10 <span class="text-lg font-medium">Ahli</span></p>
-      </div>
-      <div class="bento-card p-10 text-center">
-        <img src="Adventurer.webp" class="h-16 mx-auto mb-4 object-contain">
-        <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Adventurer</h3>
-        <p class="text-3xl font-bold mt-2">7 <span class="text-lg font-medium">Ahli</span></p>
-      </div>
-    </div>
-  </section>
 
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
+        
+        <div class="bento-card p-10 text-center">
+          <img src="MG.png" alt="Master Guide" class="club-logo">
+          <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Master Guide</h3>
+          <p class="text-3xl font-bold mt-2">3 <span class="text-lg font-medium text-apple-gray">Ahli</span></p>
+        </div>
+
+        <div class="bento-card p-10 text-center">
+          <img src="Pathfinder.png" alt="Pathfinder" class="club-logo">
+          <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Pathfinder</h3>
+          <p class="text-3xl font-bold mt-2">10 <span class="text-lg font-medium text-apple-gray">Ahli</span></p>
+        </div>
+
+        <div class="bento-card p-10 text-center">
+          <img src="Adventurer.webp" alt="Adventurer" class="club-logo">
+          <h3 class="text-apple-gray text-xs font-semibold uppercase tracking-widest">Adventurer</h3>
+          <p class="text-3xl font-bold mt-2">7 <span class="text-lg font-medium text-apple-gray">Ahli</span></p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="pb-32 reveal">
+      <div class="flex justify-between items-end mb-12">
+          <div>
+              <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sorotan Aktiviti</h2>
+              <p class="text-apple-gray mt-2 text-lg">Momen-momen bermakna dalam pelayanan kami.</p>
+          </div>
+          <a href="timeline.html" class="bg-apple-light text-apple-blue px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-all">
+            Lihat Semua →
+          </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+          
+          <div class="group cursor-pointer" onclick="window.location.href='timeline.html'">
+              <div class="overflow-hidden rounded-[40px] mb-6 shadow-lg">
+                  <img src="gyd-1403-1.jpg" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700">
+              </div>
+              <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">14 Mac 2026</p>
+              <h3 class="text-2xl font-bold group-hover:text-apple-blue transition-colors">Global Children & Youth Day</h3>
+              <p class="text-apple-gray text-sm mt-2 leading-relaxed">Program ziarah doa dan kasih di Kg. Koporingan, Tamparuli.</p>
+          </div>
+
+          <div class="group cursor-pointer" onclick="window.location.href='timeline.html'">
+              <div class="overflow-hidden rounded-[40px] mb-6 shadow-lg">
+                  <img src="ay-2102-1.jpg" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700">
+              </div>
+              <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">21 Feb 2026</p>
+              <h3 class="text-2xl font-bold group-hover:text-apple-blue transition-colors">Aktiviti Karakter Alkitab</h3>
+              <p class="text-apple-gray text-sm mt-2 leading-relaxed">Belajar mengenai identiti rohani melalui aktiviti interaktif.</p>
+          </div>
+
+          <div class="group cursor-pointer" onclick="window.location.href='timeline.html'">
+              <div class="overflow-hidden rounded-[40px] mb-6 shadow-lg">
+                  <img src="induction-1.jpeg" class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700">
+              </div>
+              <p class="text-apple-blue font-bold text-xs tracking-widest uppercase mb-2">07 Feb 2026</p>
+              <h3 class="text-2xl font-bold group-hover:text-apple-blue transition-colors">Induction Night</h3>
+              <p class="text-apple-gray text-sm mt-2 leading-relaxed">Malam komitmen bagi barisan pemimpin dan ahli belia 2026.</p>
+          </div>
+
+      </div>
+    </section>
+  </div>
 </main>
 
-<footer class="bg-apple-light py-16 text-center">
-    <p class="text-apple-gray text-sm">© 2026 Jabatan Belia Gereja SDA Koporingan</p>
+<footer class="bg-apple-light py-16 text-center border-t border-gray-100">
+    <div class="mb-4 font-bold">Belia SDA Koporingan</div>
+    <p class="text-apple-gray text-sm">© 2026 Jabatan Belia Gereja SDA Koporingan. <br>Designed for Ministry.</p>
 </footer>
 
 <script>
+  // Reveal animation on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -133,6 +229,7 @@
       }
     });
   }, { threshold: 0.1 });
+
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
